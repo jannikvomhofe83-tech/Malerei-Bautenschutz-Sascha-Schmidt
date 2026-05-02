@@ -50,7 +50,6 @@ export function Layout237() {
         const content = card.querySelector(".l237-card-content");
         const line    = card.querySelector(".l237-card-line");
 
-        // Alternate: even → from left, odd → from right
         const fromLeft = i % 2 === 0;
         const clipFrom  = fromLeft ? "inset(0 100% 0 0)"  : "inset(0 0 0 100%)";
         const xDrift    = fromLeft ? -7  : 7;
@@ -63,14 +62,12 @@ export function Layout237() {
           },
         });
 
-        // 1. Whole card: horizontal wipe — direction alternates
         tl.from(card, {
           clipPath: clipFrom,
           duration: 1.25,
           ease: "power3.inOut",
         }, 0);
 
-        // 2. Image drifts in from the same side as the wipe
         if (img) {
           tl.from(img, {
             xPercent: xDrift,
@@ -79,7 +76,6 @@ export function Layout237() {
           }, 0);
         }
 
-        // 3. Gold accent line grows downward just after wipe starts
         if (line) {
           tl.from(line, {
             scaleY: 0,
@@ -89,7 +85,6 @@ export function Layout237() {
           }, 0.4);
         }
 
-        // 4. Text content slides in from the same side and fades
         if (content) {
           tl.from(content, {
             x: xContent,
@@ -99,7 +94,6 @@ export function Layout237() {
           }, 0.55);
         }
 
-        // 5. Continuous scroll parallax on the image
         if (img) {
           gsap.to(img, {
             yPercent: -10,
@@ -167,7 +161,6 @@ export function Layout237() {
                 className="l237-card group relative overflow-hidden"
                 style={{ height: "clamp(280px, 48vh, 520px)" }}
               >
-                {/* Image */}
                 <img
                   src={f.image}
                   alt={f.title}
@@ -175,7 +168,6 @@ export function Layout237() {
                   style={{ willChange: "transform" }}
                 />
 
-                {/* Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
                 <div
                   className={`absolute inset-0 bg-gradient-to-r ${
@@ -183,7 +175,6 @@ export function Layout237() {
                   }`}
                 />
 
-                {/* Ghost number */}
                 <div
                   className="pointer-events-none absolute top-4 font-heading font-bold leading-none text-white/6 select-none"
                   style={{
@@ -196,11 +187,9 @@ export function Layout237() {
                   {num}
                 </div>
 
-                {/* Content – animated as a group */}
                 <div
                   className={`l237-card-content absolute bottom-0 ${isEven ? "left-0" : "right-0"} p-8 md:p-12 max-w-xl`}
                 >
-                  {/* Gold accent line */}
                   <div className="l237-card-line mb-4 h-px w-8 bg-hoser-gold" />
                   <h3
                     className="mb-3 font-heading font-bold leading-tight tracking-tight text-white"
