@@ -91,9 +91,9 @@ export function Header78() {
 
         {/* Body */}
         <p className="mb-10 max-w-[420px] font-body text-base leading-relaxed text-white/55 md:text-lg">
-          Hoch-, Erd- und Kanalbau aus dem Herzen Bayerns. Hoser Bauunternehmen
-          steht seit 1952 für meisterliche Handwerkskunst, Termintreue und
-          Bauwerke, die Generationen überdauern.
+          Hochbau, Sanierung, Tiefbau, Ingenieurbau und Gewerbebau aus Markt Schwaben.
+          Hoser Bauunternehmung steht seit 1952 für meisterliche Handwerkskunst,
+          Termintreue und Bauwerke, die Generationen überdauern.
         </p>
 
         {/* CTAs */}
