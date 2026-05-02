@@ -1,36 +1,33 @@
 "use client";
 
-import { Button } from "@relume_io/relume-ui";
 import React from "react";
 
 export function Header65() {
   return (
-    <section id="relume" className="relative px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container relative z-10 max-w-lg text-center">
-        <p className="mb-3 font-semibold text-text-alternative md:mb-4">
+    <section className="relative px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="container relative z-10 max-w-2xl">
+        <p className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
           Leistungen
         </p>
-        <h1 className="mb-5 text-6xl font-bold text-text-alternative md:mb-6 md:text-9xl lg:text-10xl">
-          Unsere Leistungen für Ihr Zuhause
+        <h1
+          className="mb-5 font-heading font-bold leading-[1.05] tracking-tight text-white"
+          style={{ fontSize: "clamp(2.8rem, 6vw, 6rem)" }}
+        >
+          Bauen aus einer Hand.
         </h1>
-        <p className="text-text-alternative md:text-md">
-          From Munich to Augsburg, we handle planning, building, and renovation
-          across Bavaria with precision and transparency.
+        <p className="font-body text-base leading-relaxed text-white/65 md:text-lg">
+          Hochbau, Tiefbau, Sanierung, Ingenieurbau und Gewerbebau –
+          wir übernehmen Baumeisterarbeiten aller Art im Raum Ebersberg,
+          Erding und München-Ost. Mit eigenem Fachpersonal und modernster Technik.
         </p>
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4 md:mt-8">
-          <Button title="Anfragen">Anfragen</Button>
-          <Button title="Projekte" variant="secondary-alt">
-            Projekte
-          </Button>
-        </div>
       </div>
       <div className="absolute inset-0 z-0">
         <img
-          src="/images/hero-aerial-construction.jpg"
+          src="/images/craftsmen-stone-facade.jpg"
           className="size-full object-cover"
-          alt="Relume placeholder image"
+          alt="Hoser Bauunternehmung Leistungen"
         />
-        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/25" />
       </div>
     </section>
   );

@@ -5,17 +5,17 @@ import React from "react";
 const features = [
   {
     title: "Handwerk als Berufung",
-    body: "Wir bauen nicht, um fertig zu werden. Wir bauen, weil wir überzeugt sind, dass gutes Handwerk Bestand hat – über Generationen hinaus.",
+    body: "Gegründet 1952 von Michael Hoser als Maurerfirma mit drei Mitarbeitern. Heute führen wir das Unternehmen in der dritten Generation – mit denselben Werten, aber modernster Technik und eigenem, ausgebildetem Fachpersonal.",
     image: "/images/craftsmen-stone-facade.jpg",
   },
   {
-    title: "Ehrlichkeit",
-    body: "Ein fester Preis. Ein klarer Zeitplan. Keine Überraschungen. Das sind für uns keine Extras – das ist der Mindeststandard.",
+    title: "Verlässlichkeit",
+    body: "Klare Angebote, transparente Zeitpläne, direkte Kommunikation. Wir koordinieren Architekten, Ingenieure und Fachgewerke – Sie haben einen Ansprechpartner von der ersten Besprechung bis zur Schlüsselübergabe.",
     image: "/images/team-blueprints.jpg",
   },
   {
-    title: "Verwurzelt in Bayern",
-    body: "Markt Schwaben ist unsere Heimat. Unsere Kunden sind unsere Nachbarn. Ihr Vertrauen ist das wertvollste, was wir besitzen.",
+    title: "Verwurzelt in der Region",
+    body: "Markt Schwaben ist unser Zuhause. Seit über 70 Jahren bauen wir im Raum Ebersberg, Erding und München-Ost. Wir kennen die lokalen Behörden, Genehmigungsverfahren und die Anforderungen dieser Region.",
     image: "/images/munich-residential.jpg",
   },
 ];

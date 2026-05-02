@@ -5,33 +5,33 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    q: "Wie garantieren Sie einen Festpreis?",
-    a: "Wir legen den Preis fest, bevor der Bau beginnt. Jede Position, jedes Material, jede Arbeitsleistung ist schriftlich dokumentiert und vereinbart.",
-    image: "/images/villa-twilight.jpg",
-  },
-  {
-    q: "Was passiert, wenn etwas Unerwartetes eintritt?",
-    a: "Wir planen Puffer ein und kommunizieren sofort, wenn sich etwas ändert. Sie werden nie von unerwarteten Kosten überrascht.",
-    image: "/images/munich-residential.jpg",
-  },
-  {
-    q: "Wie halten Sie Ihre Termine?",
-    a: "Wir arbeiten in Phasen mit klaren Meilensteinen. Unsere Bilanz: 98% pünktliche Fertigstellung bei 547 abgeschlossenen Projekten.",
+    q: "Welche Leistungen bietet Hoser Bauunternehmung an?",
+    a: "Wir führen Baumeisterarbeiten im Hochbau, Erd- und Kanalbau aus. Dazu gehören Neubau, Sanierung und Umbau von Wohn-, Gewerbe- und Ingenieurbauwerken – auch mit höchstem Schwierigkeitsgrad.",
     image: "/images/craftsmen-stone-facade.jpg",
   },
   {
-    q: "Sind Sie wirklich lokal in Bayern tätig?",
-    a: "Seit über 70 Jahren. Wir kennen die Genehmigungsverfahren, das Klima, die Vorschriften und die lokalen Behörden.",
-    image: "/images/interior-oak-concrete.jpg",
+    q: "Wie lange sind Sie schon im Geschäft?",
+    a: "Seit 1952. Gegründet von Michael Hoser als Maurerfirma mit 3 Mitarbeitern, ist das Unternehmen heute unter Claudia Hoser und Josef Lippacher bereits in der dritten Generation tätig.",
+    image: "/images/villa-twilight.jpg",
   },
   {
     q: "Welche Regionen betreuen Sie?",
-    a: "Ganz Bayern – von München über Augsburg bis Nürnberg und überall dazwischen.",
+    a: "Unser Schwerpunkt liegt im Raum Ebersberg, Erding und München-Ost. Unser Firmensitz ist in Markt Schwaben – wir sind seit Jahrzehnten verwurzelt in dieser Region.",
+    image: "/images/munich-residential.jpg",
+  },
+  {
+    q: "Arbeiten Sie mit eigenem Personal oder Subunternehmern?",
+    a: "Wir legen großen Wert auf eigenes, ausgebildetes Fachpersonal. Durch konsequente Lehrlingsausbildung sichern wir einen Personalstamm auf konstant hohem Niveau – ohne Abhängigkeit von Werklohnfirmen.",
     image: "/images/team-blueprints.jpg",
   },
   {
-    q: "Kann ich Ihre Zertifizierungen einsehen?",
-    a: "Ja. Wir sind von den führenden bayerischen Bauverbänden zertifiziert und zeigen diese Auszeichnungen stolz auf unserer Seite.",
+    q: "Können Sie auch denkmalgeschützte Gebäude sanieren?",
+    a: "Ja. Wir haben langjährige Erfahrung in der Sanierung denkmalgeschützter Gebäude, Kirchen und historischer Bausubstanz – darunter mehrere Projekte für das Erzbischöfliche Ordinariat München.",
+    image: "/images/interior-oak-concrete.jpg",
+  },
+  {
+    q: "Wie nehme ich Kontakt auf?",
+    a: "Rufen Sie uns an unter 08121 – 47 11 0 oder schreiben Sie uns an info@hoser-bauunternehmung.de. Wir melden uns schnellstmöglich für ein erstes Gespräch.",
     image: "/images/villa-twilight.jpg",
   },
 ];

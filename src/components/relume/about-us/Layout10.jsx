@@ -8,41 +8,46 @@ export function Layout10() {
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.2em] text-hoser-gold">
-              Unternehmen
+            <p className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
+              Unsere Geschichte
             </p>
-            <h1 className="mb-5 font-heading text-5xl font-bold leading-tight tracking-tight text-text-primary md:text-7xl lg:text-8xl">
-              Drei Jahrzehnte bayerisches Handwerk
-            </h1>
-            <p className="mb-8 font-body text-base text-text-secondary md:text-lg">
-              Wir bauen Häuser, die Bestand haben. Jedes Projekt wird mit derselben
-              Sorgfalt behandelt – ob Neubau oder Sanierung eines historischen
-              Gebäudes. Unser Wort ist unser Versprechen.
+            <h2 className="mb-5 font-heading text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl lg:text-6xl">
+              Vom Maurerbetrieb zum Vollbauunternehmen
+            </h2>
+            <p className="mb-6 font-body text-base leading-relaxed text-text-secondary md:text-lg">
+              Michael Hoser gründete das Unternehmen 1952 als Maurerfirma mit drei Mitarbeitern in Markt Schwaben.
+              Unter seinen Söhnen Dieter und Manfred Hoser wuchs es zu einem Bauunternehmen mit 30 Mitarbeitern heran.
+              Heute liegt die Geschäftsführung in den Händen von <strong className="text-text-primary font-semibold">Claudia Hoser</strong> und <strong className="text-text-primary font-semibold">Josef Lippacher</strong> – bereits die dritte Generation.
+            </p>
+            <p className="mb-8 font-body text-base leading-relaxed text-text-secondary md:text-lg">
+              Unser Aufgabenschwerpunkt liegt in der Ausführung von Baumeisterarbeiten im Hoch-, Erd- und Kanalbau.
+              Wir erstellen und sanieren sämtliche Wohn-, Gewerbe- und Ingenieurbauwerke – auch mit höchstem Schwierigkeitsgrad.
+              Durch eigene Fachkräfte und konsequente Lehrlingsausbildung sichern wir gleichbleibend hohe Qualität.
             </p>
             <div className="grid grid-cols-1 gap-6 py-2 sm:grid-cols-2">
               <div className="border-l-2 border-hoser-gold pl-5">
                 <h6 className="mb-2 font-heading text-base font-bold text-text-primary md:text-lg">
-                  Warum uns vertrauen
+                  Eigenes Fachpersonal
                 </h6>
                 <p className="font-body text-sm text-text-secondary">
-                  Über 800 Häuser in Bayern. Unsere Kunden wissen: Wir liefern.
+                  Kein Rückgriff auf Werklohnfirmen – ausgebildete Mitarbeiter auf allen Baustellen.
                 </p>
               </div>
               <div className="border-l-2 border-hoser-gold pl-5">
                 <h6 className="mb-2 font-heading text-base font-bold text-text-primary md:text-lg">
-                  Wie wir arbeiten
+                  Modernste Ausstattung
                 </h6>
                 <p className="font-body text-sm text-text-secondary">
-                  Transparente Zeitpläne, Festpreise und regelmäßige Updates von Anfang bis Ende.
+                  Neueste Technik, umfangreicher Maschinen- und Fuhrpark für zuverlässige Ausführung.
                 </p>
               </div>
             </div>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a
                 href="/leistungen"
-                className="inline-flex items-center border border-border-primary px-7 py-3 font-body text-sm font-semibold tracking-wide text-text-primary transition-colors duration-200 hover:border-text-primary"
+                className="inline-flex items-center border border-border-primary px-7 py-3 font-body text-sm font-semibold tracking-wide text-text-primary transition-colors duration-200 hover:border-hoser-gold hover:text-hoser-gold"
               >
-                Leistungen entdecken
+                Unsere Leistungen
               </a>
               <a
                 href="/kontakt"
@@ -57,7 +62,7 @@ export function Layout10() {
             <img
               src="/images/craftsmen-stone-facade.jpg"
               className="w-full object-cover transition-transform duration-700 hover:scale-105"
-              alt="Handwerker bei der Fassadenarbeit"
+              alt="Hoser Bauunternehmung – Facharbeiter auf der Baustelle"
             />
           </div>
         </div>

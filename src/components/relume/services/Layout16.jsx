@@ -1,76 +1,52 @@
 "use client";
 
-import { Button } from "@relume_io/relume-ui";
 import React from "react";
-import { RxChevronRight } from "react-icons/rx";
+
+const points = [
+  "Eigenes, ausgebildetes Fachpersonal – kein Rückgriff auf Werklohnfirmen",
+  "Umfangreicher Maschinen- und Fuhrpark für alle Gewerke",
+  "Direkte Kommunikation mit der Geschäftsführung",
+];
 
 export function Layout16() {
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="bg-background-primary px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold md:mb-4">Betreuung</p>
-            <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-              One contact from start to handover
-            </h1>
-            <p className="mb-5 text-base md:mb-6 md:text-md">
-              You don't coordinate with a dozen subcontractors. You work with
-              us. We manage the architects, engineers, trades, and inspectors.
-              You get updates, decisions made fast, and a single point of
-              accountability.
+            <p className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
+              Warum Hoser
             </p>
-            <ul className="grid grid-cols-1 gap-4 py-2">
-              <li className="flex self-start">
-                <div className="mr-4 flex-none self-start">
-                  <img
-                    src="/favicon.svg" className="hidden size-12"
-                    alt="Relume logo 1"
-                    className="size-6"
-                  />
-                </div>
-                <span>Dedicated project manager assigned to you</span>
-              </li>
-              <li className="flex self-start">
-                <div className="mr-4 flex-none self-start">
-                  <img
-                    src="/favicon.svg" className="hidden size-12"
-                    alt="Relume logo 1"
-                    className="size-6"
-                  />
-                </div>
-                <span>All trades and permits coordinated seamlessly</span>
-              </li>
-              <li className="flex self-start">
-                <div className="mr-4 flex-none self-start">
-                  <img
-                    src="/favicon.svg" className="hidden size-12"
-                    alt="Relume logo 1"
-                    className="size-6"
-                  />
-                </div>
-                <span>Weekly progress reports and direct access</span>
-              </li>
+            <h2 className="mb-5 font-heading text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl">
+              Kompetenz und Terminsicherheit – garantiert.
+            </h2>
+            <p className="mb-6 font-body text-base leading-relaxed text-text-secondary md:text-lg">
+              Durch geschultes Personal, neueste Technik und einen umfangreichen
+              Maschinenpark bieten wir Ihnen ein Know-how, das Kompetenz und
+              Terminsicherheit garantiert. Hoher Qualitätsstandard der verarbeiteten
+              Materialien und erfahrene Fachkräfte bürgen für zuverlässige Ausführung.
+            </p>
+            <ul className="mb-8 space-y-4">
+              {points.map((p) => (
+                <li key={p} className="flex items-start gap-3 font-body text-sm text-text-secondary md:text-base">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-hoser-gold" />
+                  {p}
+                </li>
+              ))}
             </ul>
-            <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-              <Button title="Anfragen" variant="secondary">
-                Anfragen
-              </Button>
-              <Button
-                title="Process"
-                variant="link"
-                size="link"
-                iconRight={<RxChevronRight />}
-              >
-                Process
-              </Button>
-            </div>
+            <a
+              href="/kontakt"
+              className="inline-flex items-center gap-2 border border-border-primary px-7 py-3 font-body text-sm font-semibold tracking-wide text-text-primary transition-colors duration-200 hover:border-hoser-gold hover:text-hoser-gold"
+            >
+              Projekt besprechen
+              <span className="text-hoser-gold">→</span>
+            </a>
           </div>
-          <div>
+          <div className="overflow-hidden">
             <img
-              src="/images/hero-aerial-construction.jpg"
-              className="w-full object-cover"
-              alt="Relume placeholder image"
+              src="/images/team-blueprints.jpg"
+              className="w-full object-cover transition-transform duration-700 hover:scale-105"
+              alt="Hoser Team bei der Projektplanung"
             />
           </div>
         </div>

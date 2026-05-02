@@ -1,80 +1,92 @@
 "use client";
 
-import { Button } from "@relume_io/relume-ui";
 import React from "react";
-import { RxChevronRight } from "react-icons/rx";
+
+const services = [
+  {
+    image: "/images/munich-residential.jpg",
+    title: "Hochbau & Neubau",
+    body: "Neubau von Wohnanlagen, Mehrfamilienhäusern, Einfamilienhäusern und öffentlichen Gebäuden. Von der Bodenplatte bis zum Dach – alles aus einer Hand.",
+  },
+  {
+    image: "/images/craftsmen-stone-facade.jpg",
+    title: "Sanierung & Umbau",
+    body: "Modernisierung, Umbau und Erweiterung von Bestandsgebäuden. Wir haben langjährige Erfahrung auch mit denkmalgeschützten Gebäuden und Kirchensanierungen.",
+  },
+  {
+    image: "/images/team-blueprints.jpg",
+    title: "Erd- & Kanalbau",
+    body: "Tiefbauarbeiten, Erschließungen, Kanal- und Wasserleitungsarbeiten. Jahresrahmenverträge mit Kommunen belegen unsere Verlässlichkeit im Tiefbau.",
+  },
+  {
+    image: "/images/villa-twilight.jpg",
+    title: "Ingenieurbau",
+    body: "Konstruktiver Bau mit höchsten technischen Anforderungen: Sichtbetonbauwerke, Hochbehälter, Stützkonstruktionen und Spezialtiefbau.",
+  },
+  {
+    image: "/images/interior-oak-concrete.jpg",
+    title: "Industrie- & Gewerbebau",
+    body: "Produktionshallen, Bürogebäude, Betriebsstätten und gewerbliche Anlagen. Bekannte Referenzen: Firma Seidenader, Raiffeisen Bank, Brauerei Schweiger.",
+  },
+];
 
 export function Layout239() {
   return (
-    <section id="relume" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="bg-background-primary px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
-        <div className="flex flex-col items-center">
-          <div className="rb-12 mb-12 text-center md:mb-18 lg:mb-20">
-            <div className="w-full max-w-lg">
-              <p className="mb-3 font-semibold md:mb-4">Leistungen</p>
-              <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">
-                Three core services, one commitment to excellence
-              </h2>
-              <p className="md:text-md">
-                Whether you're building from the ground up, restoring a
-                century-old home, or adding space to what you already have, we
-                bring the same rigor and attention to detail to every project.
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 items-start justify-center gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
-            <div className="flex w-full flex-col items-center text-center">
-              <div className="rb-6 mb-6 md:mb-8">
+        <div className="mb-12 max-w-2xl md:mb-18 lg:mb-20">
+          <p className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
+            Leistungsspektrum
+          </p>
+          <h2 className="mb-5 font-heading text-4xl font-bold leading-tight tracking-tight text-text-primary md:text-5xl lg:text-6xl">
+            Fünf Gewerke. Ein Ansprechpartner.
+          </h2>
+          <p className="font-body text-base leading-relaxed text-text-secondary md:text-lg">
+            Ob Neubau, Sanierung oder Spezialtiefbau – wir übernehmen Baumeisterarbeiten
+            aller Schwierigkeitsgrade mit geschultem Personal und eigenem Maschinenpark.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, i) => (
+            <div key={s.title} className="group flex flex-col">
+              <div className="mb-5 overflow-hidden">
                 <img
-                  src="/images/hero-aerial-construction.jpg"
-                  alt="Relume placeholder image"
+                  src={s.image}
+                  alt={s.title}
+                  className="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                 />
               </div>
-              <h3 className="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Neubau
-              </h3>
-              <p>
-                New construction from foundation to keys, built to your exact
-                specifications and local Bavarian standards.
-              </p>
-            </div>
-            <div className="flex w-full flex-col items-center text-center">
-              <div className="rb-6 mb-6 md:mb-8">
-                <img
-                  src="/images/villa-twilight.jpg"
-                  alt="Relume placeholder image"
-                />
+              <div className="mb-3 flex items-center gap-3">
+                <span className="h-px w-6 shrink-0 bg-hoser-gold" />
+                <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-hoser-gold">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
-              <h3 className="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Altbausanierung
+              <h3 className="mb-3 font-heading text-xl font-bold leading-tight text-text-primary md:text-2xl">
+                {s.title}
               </h3>
-              <p>
-                Thoughtful renovation of older homes that preserves character
-                while meeting modern building codes and energy efficiency.
+              <p className="font-body text-sm leading-relaxed text-text-secondary md:text-base">
+                {s.body}
               </p>
             </div>
-            <div className="flex w-full flex-col items-center text-center">
-              <div className="rb-6 mb-6 md:mb-8">
-                <img
-                  src="/images/team-blueprints.jpg"
-                  alt="Relume placeholder image"
-                />
-              </div>
-              <h3 className="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl">
-                Anbau & Umbau
-              </h3>
-              <p>
-                Extensions and conversions that expand your living space without
-                compromising the integrity of your existing structure.
-              </p>
-            </div>
-          </div>
-          <div className="mt-6 flex flex-wrap items-center gap-4 md:mt-8">
-            <Button variant="secondary">Anfragen</Button>
-            <Button iconRight={<RxChevronRight />} variant="link" size="link">
-              Prozess
-            </Button>
-          </div>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-wrap items-center gap-4 md:mt-16">
+          <a
+            href="/kontakt"
+            className="inline-flex items-center bg-hoser-gold px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
+          >
+            Projekt anfragen
+          </a>
+          <a
+            href="/projekte"
+            className="inline-flex items-center gap-2 font-body text-sm font-semibold text-text-primary transition-colors duration-200 hover:text-hoser-gold"
+          >
+            Referenzprojekte ansehen
+            <span className="text-hoser-gold">→</span>
+          </a>
         </div>
       </div>
     </section>
