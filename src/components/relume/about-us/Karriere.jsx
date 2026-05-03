@@ -138,7 +138,7 @@ export function Karriere() {
     <section
       id="stellenangebote"
       className="overflow-hidden"
-      style={{ background: "linear-gradient(180deg, rgba(100,8,20,0.95) 0%, rgba(80,5,15,0.98) 100%)" }}
+      style={{ background: "linear-gradient(180deg, #0a1020 0%, #111827 100%)" }}
     >
       {/* Heading with image background */}
       <div
@@ -179,7 +179,7 @@ export function Karriere() {
       </div>
 
       {/* Job list + contact */}
-      <div className="px-[5%] pb-16 md:pb-24 lg:pb-28" style={{ background: "rgba(80,5,15,0.98)" }}>
+      <div className="px-[5%] pb-16 md:pb-24 lg:pb-28">
         <div className="container">
 
         {/* Job cards grid */}
@@ -195,10 +195,10 @@ export function Karriere() {
                 <div
                   className="relative overflow-hidden transition-all duration-300"
                   style={{
-                    background: isOpen ? "rgba(196,30,58,0.12)" : "rgba(196,30,58,0.07)",
+                    background: isOpen ? "rgba(196,30,58,0.06)" : "rgba(255,255,255,0.02)",
                     border: "1px solid",
-                    borderColor: isOpen ? "rgba(196,30,58,0.45)" : "rgba(196,30,58,0.15)",
-                    borderLeft: `3px solid ${isOpen ? "#C41E3A" : "rgba(196,30,58,0.25)"}`,
+                    borderColor: isOpen ? "rgba(196,30,58,0.4)" : "rgba(255,255,255,0.08)",
+                    borderLeft: `3px solid ${isOpen ? "#C41E3A" : "rgba(255,255,255,0.08)"}`,
                   }}
                 >
                   {/* Ghost number */}
