@@ -22,7 +22,7 @@ const team = [
 
 export function Team() {
   return (
-    <section className="bg-[#111827] px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="bg-[#f0f0ef] px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
 
         {/* Heading */}
@@ -31,12 +31,12 @@ export function Team() {
             Menschen bei Hoser
           </p>
           <h2
-            className="font-heading font-bold leading-tight tracking-tight text-white"
+            className="font-heading font-bold leading-tight tracking-tight text-[#0a1020]"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
             Unser Team
           </h2>
-          <p className="mt-4 max-w-xl font-body text-base text-white/60">
+          <p className="mt-4 max-w-xl font-body text-base text-[#0a1020]/60">
             Eigenes, ausgebildetes Fachpersonal – kein Rückgriff auf Werklohnfirmen.
           </p>
         </div>
@@ -58,7 +58,7 @@ export function Team() {
               </div>
 
               {/* Info */}
-              <h3 className="font-heading text-sm font-bold text-white md:text-base">
+              <h3 className="font-heading text-sm font-bold text-[#0a1020] md:text-base">
                 {member.name}
               </h3>
               <p className="mt-1 font-body text-xs text-[#C41E3A]/80">

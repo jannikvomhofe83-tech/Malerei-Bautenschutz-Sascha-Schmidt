@@ -152,7 +152,7 @@ export function Karriere() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(10,16,32,0.72) 0%, rgba(10,16,32,0.88) 60%, rgba(80,5,15,1) 100%)",
+            background: "linear-gradient(to bottom, rgba(10,16,32,0.50) 0%, rgba(10,16,32,0.30) 40%, rgba(10,16,32,0.75) 75%, rgba(10,16,32,1) 100%)",
           }}
         />
         <div className="container relative z-10">

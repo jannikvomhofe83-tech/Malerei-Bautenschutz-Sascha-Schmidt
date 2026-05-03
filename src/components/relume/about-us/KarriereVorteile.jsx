@@ -51,17 +51,17 @@ export function KarriereVorteile() {
           backgroundPosition: "center 30%",
         }}
       >
-        {/* Dark overlay — keeps text readable on dark section */}
+        {/* Overlay: transparent in the middle so image shows, dark at edges */}
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(10,16,32,0.72) 0%, rgba(13,21,32,0.88) 60%, rgba(13,21,32,1) 100%)",
+            background: "linear-gradient(to bottom, rgba(10,16,32,0.55) 0%, rgba(10,16,32,0.30) 40%, rgba(13,21,32,0.70) 75%, rgba(13,21,32,1) 100%)",
           }}
         />
 
         {/* Decorative background text */}
         <div
-          className="pointer-events-none absolute right-[-2%] top-[50%] -translate-y-1/2 select-none font-heading font-bold leading-none text-white/[0.025]"
+          className="pointer-events-none absolute right-[-2%] top-[50%] -translate-y-1/2 select-none font-heading font-bold leading-none text-white/[0.06]"
           style={{ fontSize: "clamp(6rem, 18vw, 20rem)" }}
           aria-hidden="true"
         >
@@ -100,35 +100,27 @@ export function KarriereVorteile() {
       {/* Benefits grid */}
       <div className="px-[5%] pb-16 md:pb-24 lg:pb-28">
         <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
-          {vorteile.map((v, i) => (
-            <div
-              key={v.num}
-              className="group relative bg-[#0d1520] p-8 md:p-10 transition-colors duration-300 hover:bg-white/[0.04]"
-            >
-              {/* Number */}
-              <span className="mb-6 block font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-[#C41E3A]/60">
-                {v.num}
-              </span>
-
-              {/* Title */}
-              <h3 className="mb-3 font-heading text-lg font-bold text-white md:text-xl transition-colors duration-300 group-hover:text-[#C41E3A]">
-                {v.title}
-              </h3>
-
-              {/* Description */}
-              <p className="font-body text-sm leading-relaxed text-white/45">
-                {v.desc}
-              </p>
-
-              {/* Gold bottom accent */}
-              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#C41E3A] transition-all duration-500 group-hover:w-full" />
-            </div>
-          ))}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
+            {vorteile.map((v) => (
+              <div
+                key={v.num}
+                className="group relative bg-[#0d1520] p-8 md:p-10 transition-colors duration-300 hover:bg-white/[0.04]"
+              >
+                <span className="mb-6 block font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-[#C41E3A]/60">
+                  {v.num}
+                </span>
+                <h3 className="mb-3 font-heading text-lg font-bold text-white md:text-xl transition-colors duration-300 group-hover:text-[#C41E3A]">
+                  {v.title}
+                </h3>
+                <p className="font-body text-sm leading-relaxed text-white/45">
+                  {v.desc}
+                </p>
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#C41E3A] transition-all duration-500 group-hover:w-full" />
+              </div>
+            ))}
+          </div>
         </div>
-
-        </div>{/* end container */}
-      </div>{/* end bottom section */}
+      </div>
     </section>
   );
 }
