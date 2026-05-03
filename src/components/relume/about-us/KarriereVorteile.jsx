@@ -39,48 +39,67 @@ export function KarriereVorteile() {
   return (
     <section
       id="jobs"
-      className="relative px-[5%] py-16 md:py-24 lg:py-28 overflow-hidden"
+      className="overflow-hidden"
       style={{ background: "linear-gradient(135deg, #0d1a2e 0%, #111827 60%, #0a1020 100%)" }}
     >
-      {/* Decorative background text */}
+      {/* Top: image background behind heading */}
       <div
-        className="pointer-events-none absolute right-[-2%] top-[50%] -translate-y-1/2 select-none font-heading font-bold leading-none text-white/[0.025]"
-        style={{ fontSize: "clamp(6rem, 18vw, 20rem)" }}
-        aria-hidden="true"
+        className="relative px-[5%] py-16 md:py-24 lg:py-28"
+        style={{
+          backgroundImage: "url('/images/bild14.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }}
       >
-        HOSER
-      </div>
+        {/* Dark overlay — keeps text readable on dark section */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to bottom, rgba(10,16,32,0.72) 0%, rgba(13,21,32,0.88) 60%, rgba(13,21,32,1) 100%)",
+          }}
+        />
 
-      <div className="container relative z-10">
-
-        {/* Top: 2-column header */}
-        <div className="mb-16 md:mb-20 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
-          <div>
-            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
-              Karriere bei Hoser
-            </p>
-            <h2
-              className="font-heading font-bold leading-tight tracking-tight text-white"
-              style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
-            >
-              Warum bei uns arbeiten?
-            </h2>
-          </div>
-          <div className="md:text-right">
-            <p className="font-body text-base leading-relaxed text-white/55 max-w-md md:ml-auto">
-              Als gewachsenes Familienunternehmen bieten wir mehr als nur einen Job –
-              einen Arbeitsplatz, der sich lohnt. Langfristig, sicher und fair.
-            </p>
-            <a
-              href="#stellenangebote"
-              className="mt-6 inline-flex items-center gap-2 border border-hoser-gold/50 px-6 py-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-hoser-gold transition-all duration-200 hover:bg-hoser-gold hover:text-white hover:border-hoser-gold"
-            >
-              Alle Stellen ansehen →
-            </a>
-          </div>
+        {/* Decorative background text */}
+        <div
+          className="pointer-events-none absolute right-[-2%] top-[50%] -translate-y-1/2 select-none font-heading font-bold leading-none text-white/[0.025]"
+          style={{ fontSize: "clamp(6rem, 18vw, 20rem)" }}
+          aria-hidden="true"
+        >
+          HOSER
         </div>
 
-        {/* Benefits grid */}
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
+            <div>
+              <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A]">
+                Karriere bei Hoser
+              </p>
+              <h2
+                className="font-heading font-bold leading-tight tracking-tight text-white"
+                style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
+              >
+                Warum bei uns arbeiten?
+              </h2>
+            </div>
+            <div className="md:text-right">
+              <p className="font-body text-base leading-relaxed text-white/70 max-w-md md:ml-auto">
+                Als gewachsenes Familienunternehmen bieten wir mehr als nur einen Job –
+                einen Arbeitsplatz, der sich lohnt. Langfristig, sicher und fair.
+              </p>
+              <a
+                href="#stellenangebote"
+                className="mt-6 inline-flex items-center gap-2 border border-[#C41E3A]/50 px-6 py-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#C41E3A] transition-all duration-200 hover:bg-[#C41E3A] hover:text-white hover:border-[#C41E3A]"
+              >
+                Alle Stellen ansehen →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Benefits grid */}
+      <div className="px-[5%] pb-16 md:pb-24 lg:pb-28">
+        <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
           {vorteile.map((v, i) => (
             <div
@@ -88,12 +107,12 @@ export function KarriereVorteile() {
               className="group relative bg-[#0d1520] p-8 md:p-10 transition-colors duration-300 hover:bg-white/[0.04]"
             >
               {/* Number */}
-              <span className="mb-6 block font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-hoser-gold/60">
+              <span className="mb-6 block font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-[#C41E3A]/60">
                 {v.num}
               </span>
 
               {/* Title */}
-              <h3 className="mb-3 font-heading text-lg font-bold text-white md:text-xl transition-colors duration-300 group-hover:text-hoser-gold">
+              <h3 className="mb-3 font-heading text-lg font-bold text-white md:text-xl transition-colors duration-300 group-hover:text-[#C41E3A]">
                 {v.title}
               </h3>
 
@@ -103,12 +122,13 @@ export function KarriereVorteile() {
               </p>
 
               {/* Gold bottom accent */}
-              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-hoser-gold transition-all duration-500 group-hover:w-full" />
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#C41E3A] transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>
 
-      </div>
+        </div>{/* end container */}
+      </div>{/* end bottom section */}
     </section>
   );
 }

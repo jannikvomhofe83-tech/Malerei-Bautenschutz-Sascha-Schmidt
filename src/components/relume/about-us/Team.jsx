@@ -27,7 +27,7 @@ export function Team() {
 
         {/* Heading */}
         <div className="mb-14 md:mb-18">
-          <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
+          <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A]">
             Menschen bei Hoser
           </p>
           <h2
@@ -54,14 +54,14 @@ export function Team() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 {/* Gold bottom line on hover */}
-                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-hoser-gold transition-all duration-500 group-hover:w-full" />
+                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#C41E3A] transition-all duration-500 group-hover:w-full" />
               </div>
 
               {/* Info */}
               <h3 className="font-heading text-sm font-bold text-white md:text-base">
                 {member.name}
               </h3>
-              <p className="mt-1 font-body text-xs text-hoser-gold/80">
+              <p className="mt-1 font-body text-xs text-[#C41E3A]/80">
                 {member.role}
               </p>
             </div>

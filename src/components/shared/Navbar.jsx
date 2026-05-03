@@ -2,7 +2,7 @@
 
 import { useMediaQuery } from "@relume_io/relume-ui";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import clsx from "clsx";
 import React, { useState } from "react";
 
@@ -25,6 +25,26 @@ const navLinks = [
 
 function DropdownLink({ link, active }) {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+
+  function handleChildClick(e, child) {
+    setOpen(false);
+    if (!child.href.includes("#")) return;
+    e.preventDefault();
+    const [path, hash] = child.href.split("#");
+    const scrollToEl = () => {
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    };
+    if (pathname === path) {
+      scrollToEl();
+    } else {
+      navigate(path);
+      setTimeout(scrollToEl, 120);
+    }
+  }
+
   return (
     <div
       className="relative"
@@ -65,6 +85,7 @@ function DropdownLink({ link, active }) {
                 <Link
                   key={child.href}
                   to={child.href}
+                  onClick={(e) => handleChildClick(e, child)}
                   className="block px-5 py-3 text-sm font-medium text-[#0a1020] transition-colors duration-150 hover:text-hoser-gold hover:bg-hoser-gold/8"
                 >
                   {child.label}

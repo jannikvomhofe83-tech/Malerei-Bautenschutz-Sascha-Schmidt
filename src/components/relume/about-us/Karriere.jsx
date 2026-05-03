@@ -137,127 +137,167 @@ export function Karriere() {
   return (
     <section
       id="stellenangebote"
-      className="px-[5%] py-16 md:py-24 lg:py-28"
+      className="overflow-hidden"
       style={{ background: "linear-gradient(180deg, #0a1020 0%, #111827 100%)" }}
     >
-      <div className="container">
-
-        {/* Heading */}
-        <div className="mb-14 grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
-          <div>
-            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
-              Stellenangebote
-            </p>
-            <h2
-              className="font-heading font-bold leading-tight tracking-tight text-white"
-              style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
-            >
-              Offene Stellen
-            </h2>
-          </div>
-          <div>
-            <p className="font-body text-base leading-relaxed text-white/50">
-              Wir suchen laufend qualifizierte Fachkräfte, Vorarbeiter und Poliere.
-              Alle Stellen sind unbefristet und mit sofortigem Einstieg möglich.
-            </p>
+      {/* Heading with image background */}
+      <div
+        className="relative px-[5%] py-16 md:py-24 lg:py-28"
+        style={{
+          backgroundImage: "url('/images/karriere-team-vogelperspektive.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 40%",
+        }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to bottom, rgba(10,16,32,0.75) 0%, rgba(10,16,32,0.9) 60%, rgba(10,16,32,1) 100%)",
+          }}
+        />
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
+            <div>
+              <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A]">
+                Stellenangebote
+              </p>
+              <h2
+                className="font-heading font-bold leading-tight tracking-tight text-white"
+                style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
+              >
+                Offene Stellen
+              </h2>
+            </div>
+            <div>
+              <p className="font-body text-base leading-relaxed text-white/65">
+                Wir suchen laufend qualifizierte Fachkräfte, Vorarbeiter und Poliere.
+                Alle Stellen sind unbefristet und mit sofortigem Einstieg möglich.
+              </p>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Job list */}
-        <div className="mb-14">
-          {jobs.map((job, i) => (
-            <div key={job.title} className="border-t border-white/8">
-              <button
-                className="group flex w-full items-center justify-between py-6 text-left transition-colors duration-200"
-                onClick={() => setOpenIdx(openIdx === i ? null : i)}
+      {/* Job list + contact */}
+      <div className="px-[5%] pb-16 md:pb-24 lg:pb-28">
+        <div className="container">
+
+        {/* Job cards grid */}
+        <div className="mb-14 mt-2 grid grid-cols-1 md:grid-cols-2 gap-3">
+          {jobs.map((job, i) => {
+            const isOpen = openIdx === i;
+            return (
+              <div
+                key={job.title}
+                className="group relative cursor-pointer"
+                onClick={() => setOpenIdx(isOpen ? null : i)}
               >
-                <div className="flex items-center gap-6">
-                  <span className="font-body text-xs font-semibold uppercase tracking-[0.2em] text-hoser-gold/50 w-8 flex-shrink-0">
+                <div
+                  className="relative overflow-hidden transition-all duration-300"
+                  style={{
+                    background: isOpen ? "rgba(196,30,58,0.12)" : "rgba(196,30,58,0.07)",
+                    border: "1px solid",
+                    borderColor: isOpen ? "rgba(196,30,58,0.45)" : "rgba(196,30,58,0.15)",
+                    borderLeft: `3px solid ${isOpen ? "#C41E3A" : "rgba(196,30,58,0.25)"}`,
+                  }}
+                >
+                  {/* Ghost number */}
+                  <span
+                    className="pointer-events-none absolute right-5 top-4 select-none font-heading font-bold leading-none text-white"
+                    style={{ fontSize: "5rem", opacity: 0.04 }}
+                  >
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div>
-                    <h3 className="font-heading text-xl font-bold text-white transition-colors duration-200 group-hover:text-hoser-gold md:text-2xl">
-                      {job.title}
-                    </h3>
-                    <div className="flex items-center gap-3 mt-1">
-                      <span className="font-body text-xs text-white/35 uppercase tracking-widest">
+
+                  {/* Card header — always visible */}
+                  <div className="p-7 pb-5">
+                    <div className="mb-3 flex flex-wrap items-center gap-2">
+                      <span className="font-body text-[10px] font-semibold uppercase tracking-[0.28em] text-[#C41E3A]/70">
                         {job.type}
                       </span>
-                      <span className="text-white/20">·</span>
-                      <span className="font-body text-xs text-white/35 uppercase tracking-widest">
+                      <span className="text-white/15">·</span>
+                      <span className="font-body text-[10px] uppercase tracking-wider text-white/30">
                         {job.location}
                       </span>
                     </div>
-                  </div>
-                </div>
-                <span
-                  className="ml-4 flex-shrink-0 w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-hoser-gold text-xl transition-all duration-300 group-hover:border-hoser-gold/60"
-                  style={{ transform: openIdx === i ? "rotate(45deg)" : "rotate(0deg)" }}
-                >
-                  +
-                </span>
-              </button>
 
-              {/* Expand panel */}
-              <div
-                className="overflow-hidden transition-all duration-500"
-                style={{ maxHeight: openIdx === i ? "600px" : "0px" }}
-              >
-                <div className="pb-10 pl-[calc(0.5rem+32px)] pr-4 md:pr-12">
-                  <p className="mb-8 font-body text-base leading-relaxed text-white/60 max-w-2xl">
-                    {job.desc}
-                  </p>
+                    <h3
+                      className="mb-4 font-heading font-bold text-white transition-colors duration-200 group-hover:text-[#C41E3A]"
+                      style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}
+                    >
+                      {job.title}
+                    </h3>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    {/* Anforderungen */}
-                    <div>
-                      <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.25em] text-hoser-gold">
-                        Was du mitbringst
+                    <div className="flex items-center justify-between gap-4">
+                      <p className="font-body text-xs text-white/35 leading-relaxed line-clamp-1 max-w-[260px]">
+                        {job.desc.split(".")[0]}.
                       </p>
-                      <ul className="space-y-2">
-                        {job.anforderungen.map((a) => (
-                          <li key={a} className="flex items-start gap-3 font-body text-sm text-white/55">
-                            <span className="mt-[6px] flex-shrink-0 w-[5px] h-[5px] rounded-full bg-hoser-gold/70" />
-                            {a}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* Was wir bieten */}
-                    <div>
-                      <p className="mb-4 font-body text-xs font-semibold uppercase tracking-[0.25em] text-hoser-gold">
-                        Was wir bieten
-                      </p>
-                      <ul className="space-y-2">
-                        {job.bieten.map((b) => (
-                          <li key={b} className="flex items-start gap-3 font-body text-sm text-white/55">
-                            <span className="mt-[6px] flex-shrink-0 w-[5px] h-[5px] rounded-full bg-hoser-gold/70" />
-                            {b}
-                          </li>
-                        ))}
-                      </ul>
+                      <div
+                        className="flex-shrink-0 w-8 h-8 rounded-full border border-white/15 flex items-center justify-center text-[#C41E3A] text-lg transition-all duration-300 group-hover:border-[#C41E3A]/50"
+                        style={{ transform: isOpen ? "rotate(45deg)" : "rotate(0deg)", transition: "transform 0.3s ease" }}
+                      >
+                        +
+                      </div>
                     </div>
                   </div>
 
-                  <a
-                    href="mailto:jobs@hoser-bauunternehmung.de"
-                    className="inline-flex items-center gap-2 bg-hoser-gold px-6 py-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
+                  {/* Expandable details */}
+                  <div
+                    className="overflow-hidden"
+                    style={{ maxHeight: isOpen ? "500px" : "0px", transition: "max-height 0.5s ease" }}
                   >
-                    Jetzt bewerben →
-                  </a>
+                    <div className="px-7 pb-7 pt-1 border-t border-white/8">
+                      <p className="mb-6 mt-4 font-body text-sm leading-relaxed text-white/55">
+                        {job.desc}
+                      </p>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                        <div>
+                          <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.25em] text-[#C41E3A]">
+                            Was du mitbringst
+                          </p>
+                          <ul className="space-y-2">
+                            {job.anforderungen.map((a) => (
+                              <li key={a} className="flex items-start gap-2.5 font-body text-xs text-white/50">
+                                <span className="mt-[5px] flex-shrink-0 w-[4px] h-[4px] rounded-full bg-[#C41E3A]/70" />
+                                {a}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <p className="mb-3 font-body text-[10px] font-semibold uppercase tracking-[0.25em] text-[#C41E3A]">
+                            Was wir bieten
+                          </p>
+                          <ul className="space-y-2">
+                            {job.bieten.map((b) => (
+                              <li key={b} className="flex items-start gap-2.5 font-body text-xs text-white/50">
+                                <span className="mt-[5px] flex-shrink-0 w-[4px] h-[4px] rounded-full bg-[#C41E3A]/70" />
+                                {b}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <a
+                        href="mailto:jobs@hoser-bauunternehmung.de"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-2 bg-[#C41E3A] px-5 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.1em] text-white transition-opacity hover:opacity-85"
+                      >
+                        Jetzt bewerben →
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-          <div className="border-t border-white/8" />
+            );
+          })}
         </div>
 
         {/* Contact box */}
         <div className="border border-white/10 px-8 py-10 md:px-12">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
             <div>
-              <p className="mb-2 font-body text-xs font-semibold uppercase tracking-[0.25em] text-hoser-gold">
+              <p className="mb-2 font-body text-xs font-semibold uppercase tracking-[0.25em] text-[#C41E3A]">
                 Initiativbewerbung & Kontakt
               </p>
               <h3 className="font-heading text-2xl font-bold text-white md:text-3xl">
@@ -272,23 +312,24 @@ export function Karriere() {
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:jobs@hoser-bauunternehmung.de"
-                className="inline-flex items-center gap-3 border border-white/15 px-6 py-4 font-body text-sm text-white transition-all duration-200 hover:border-hoser-gold hover:text-hoser-gold"
+                className="inline-flex items-center gap-3 border border-white/15 px-6 py-4 font-body text-sm text-white transition-all duration-200 hover:border-[#C41E3A] hover:text-[#C41E3A]"
               >
-                <span className="text-hoser-gold text-base">✉</span>
+                <span className="text-[#C41E3A] text-base">✉</span>
                 jobs@hoser-bauunternehmung.de
               </a>
               <a
                 href="tel:+498121471100"
-                className="inline-flex items-center gap-3 border border-white/15 px-6 py-4 font-body text-sm text-white transition-all duration-200 hover:border-hoser-gold hover:text-hoser-gold"
+                className="inline-flex items-center gap-3 border border-white/15 px-6 py-4 font-body text-sm text-white transition-all duration-200 hover:border-[#C41E3A] hover:text-[#C41E3A]"
               >
-                <span className="text-hoser-gold text-base">☎</span>
+                <span className="text-[#C41E3A] text-base">☎</span>
                 08121 / 47 11 0
               </a>
             </div>
           </div>
         </div>
 
-      </div>
+        </div>{/* end container */}
+      </div>{/* end bottom section */}
     </section>
   );
 }

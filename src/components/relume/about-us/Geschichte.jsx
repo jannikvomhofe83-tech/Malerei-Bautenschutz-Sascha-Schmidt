@@ -1,6 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
   {
@@ -36,76 +40,203 @@ const milestones = [
 ];
 
 export function Geschichte() {
-  return (
-    <section className="bg-[#f0f0ef] px-[5%] py-16 md:py-24 lg:py-28 overflow-hidden">
-      <div className="container">
+  const sectionRef = useRef(null);
+  const lineRef = useRef(null);
+  const dotRefs = useRef([]);
+  const cardRefs = useRef([]);
 
-        {/* Heading block */}
-        <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-          <div>
-            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+
+      // Red thread grows from top to bottom as section scrolls into view
+      gsap.fromTo(
+        lineRef.current,
+        { scaleY: 0 },
+        {
+          scaleY: 1,
+          transformOrigin: "top center",
+          ease: "none",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 55%",
+            end: "bottom 75%",
+            scrub: 1.2,
+          },
+        }
+      );
+
+      // Each dot pops in when the line reaches it
+      dotRefs.current.forEach((dot) => {
+        if (!dot) return;
+        gsap.fromTo(
+          dot,
+          { scale: 0, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 1,
+            duration: 0.5,
+            ease: "back.out(2.5)",
+            scrollTrigger: {
+              trigger: dot,
+              start: "top 72%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+
+      // Each milestone card slides in from the right
+      cardRefs.current.forEach((card) => {
+        if (!card) return;
+        gsap.fromTo(
+          card,
+          { opacity: 0, x: 60 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.7,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 75%",
+              toggleActions: "play none none reverse",
+            },
+          }
+        );
+      });
+
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="bg-[#f0f0ef] overflow-hidden">
+
+      {/* Top third — image background with heading */}
+      <div
+        className="relative px-[5%] py-16 md:py-24 lg:py-28"
+        style={{
+          backgroundImage: "url('/images/geschichte-mauerwerk.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center 40%",
+        }}
+      >
+        {/* Overlay so text stays readable */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background: "linear-gradient(to bottom, rgba(240,240,239,0.82) 0%, rgba(240,240,239,0.92) 60%, rgba(240,240,239,1) 100%)",
+          }}
+        />
+
+        <div className="container relative z-10">
+          <div className="max-w-2xl">
+            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#C41E3A]">
               Seit 1952
             </p>
             <h2
-              className="font-heading font-bold leading-tight tracking-tight text-[#0a1020]"
+              className="mb-5 font-heading font-bold leading-tight tracking-tight text-[#0a1020]"
               style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
             >
               Unsere Geschichte
             </h2>
+            <p className="font-body text-base leading-relaxed text-[#0a1020]/55">
+              Drei Generationen. Eine Familie.<br />Ein Anspruch: Bauen, das hält.
+            </p>
           </div>
-          <p className="max-w-sm font-body text-base leading-relaxed text-[#0a1020]/55 md:text-right">
-            Drei Generationen. Eine Familie.<br />Ein Anspruch: Bauen, das hält.
-          </p>
         </div>
-
-        {/* Timeline rows */}
-        <div>
-          {milestones.map((m, i) => (
-            <div
-              key={m.year}
-              className="group relative grid grid-cols-1 md:grid-cols-[220px_1px_1fr] md:gap-x-10 gap-y-4 py-10 md:py-12 border-b border-[#0a1020]/10 last:border-0 transition-all duration-300"
-            >
-              {/* Year column */}
-              <div className="flex md:flex-col items-baseline md:items-start gap-4 md:gap-0 pt-1">
-                <span
-                  className="font-heading font-bold leading-none text-[#0a1020]/[0.06] select-none transition-colors duration-500 group-hover:text-hoser-gold/15"
-                  style={{ fontSize: "clamp(2rem, 3.5vw, 3.25rem)" }}
-                >
-                  {m.year}
-                </span>
-                <span className="md:mt-3 font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-hoser-gold">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </div>
-
-              {/* Vertical divider */}
-              <div className="hidden md:block relative">
-                <div className="absolute inset-0 mx-auto w-px bg-[#0a1020]/10 transition-colors duration-500 group-hover:bg-hoser-gold/50" />
-              </div>
-
-              {/* Content */}
-              <div className="md:pl-2">
-                {/* Gold left accent (mobile) */}
-                <div className="md:hidden mb-4 h-px w-10 bg-hoser-gold" />
-
-                <h3 className="mb-3 font-heading text-2xl font-bold text-[#0a1020] md:text-3xl transition-colors duration-300 group-hover:text-hoser-gold">
-                  {m.title}
-                </h3>
-                <p className="mb-3 font-body text-base leading-relaxed text-[#0a1020]/65 max-w-2xl">
-                  {m.desc}
-                </p>
-                <p className="font-body text-sm leading-relaxed text-[#0a1020]/40 max-w-xl">
-                  {m.detail}
-                </p>
-
-                {/* Gold bottom accent line on hover */}
-                <div className="mt-6 h-px w-0 bg-hoser-gold transition-all duration-500 group-hover:w-16" />
-              </div>
-            </div>
-          ))}
-        </div>
-
       </div>
+
+      {/* Bottom two thirds — timeline on plain background */}
+      <div className="px-[5%] pb-16 md:pb-24 lg:pb-28">
+        <div className="container">
+
+          {/* Timeline */}
+        <div className="relative">
+
+          {/* Red thread — full height, grows with scroll */}
+          <div
+            className="absolute top-0 bottom-0"
+            style={{
+              left: "18px",
+              width: "12px",
+              background: "linear-gradient(to right, rgba(80,0,10,0.25) 0%, #e0dfdc 30%, #e8e7e4 50%, #e0dfdc 70%, rgba(80,0,10,0.15) 100%)",
+              borderRadius: "6px",
+            }}
+          >
+            <div
+              ref={lineRef}
+              className="absolute inset-0 origin-top"
+              style={{
+                borderRadius: "6px",
+                background: "linear-gradient(to right, rgba(100,0,15,0.8) 0%, #C41E3A 25%, #FF5C72 50%, #C41E3A 75%, rgba(100,0,15,0.8) 100%)",
+                boxShadow: "2px 0 8px rgba(196,30,58,0.45), -1px 0 4px rgba(0,0,0,0.15)",
+                transform: "scaleY(0)",
+              }}
+            />
+          </div>
+
+          {/* Milestones */}
+          <div>
+            {milestones.map((m, i) => (
+              <div
+                key={m.year}
+                className="relative grid grid-cols-[48px_1fr] pb-14 last:pb-0"
+              >
+                {/* Dot on the thread — 3D sphere */}
+                <div className="flex justify-center pt-2 z-10">
+                  <div
+                    ref={(el) => (dotRefs.current[i] = el)}
+                    className="flex-shrink-0"
+                    style={{
+                      width: "22px",
+                      height: "22px",
+                      borderRadius: "50%",
+                      background: "radial-gradient(circle at 35% 32%, #FF8090, #C41E3A 48%, #7A0010 100%)",
+                      boxShadow: "0 0 0 3px #f0f0ef, 0 0 0 5px rgba(196,30,58,0.5), 2px 3px 8px rgba(0,0,0,0.3)",
+                      opacity: 0,
+                      transform: "scale(0)",
+                    }}
+                  />
+                </div>
+
+                {/* Milestone content */}
+                <div
+                  ref={(el) => (cardRefs.current[i] = el)}
+                  className="pl-8 md:pl-12"
+                  style={{ opacity: 0 }}
+                >
+                  {/* Year + number */}
+                  <div className="flex items-baseline gap-4 mb-3">
+                    <span
+                      className="font-heading font-bold leading-none text-[#0a1020]/[0.07] select-none"
+                      style={{ fontSize: "clamp(2rem, 3.5vw, 3.25rem)" }}
+                    >
+                      {m.year}
+                    </span>
+                    <span className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-[#C41E3A]">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+
+                  <h3 className="mb-3 font-heading text-2xl font-bold text-[#0a1020] md:text-3xl">
+                    {m.title}
+                  </h3>
+                  <p className="mb-2 font-body text-base leading-relaxed text-[#0a1020]/65 max-w-2xl">
+                    {m.desc}
+                  </p>
+                  <p className="font-body text-sm leading-relaxed text-[#0a1020]/40 max-w-xl">
+                    {m.detail}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          </div>{/* end timeline relative */}
+        </div>{/* end container */}
+      </div>{/* end bottom section */}
     </section>
   );
 }
