@@ -17,9 +17,13 @@ export function Stats17() {
     const ctx = gsap.context(() => {
 
       // ── Initial states (hidden) ───────────────────────────────────────
-      gsap.set(".s17-content", { opacity: 0, y: 50 });
-      gsap.set(".s17-bg-img", { scale: 1.18 });
-      gsap.set(".s17-overlay", { opacity: 0.15 });
+      gsap.set(".s17-content",      { opacity: 0 });
+      gsap.set(".s17-bg-img",       { scale: 1.18 });
+      gsap.set(".s17-overlay",      { opacity: 0.15 });
+      gsap.set(".s17-eyebrow",      { y: 22, opacity: 0 });
+      gsap.set(".s17-heading-line", { y: "110%" });
+      gsap.set(".s17-sub",          { y: 18, opacity: 0 });
+      gsap.set(".s17-cta-btn",      { y: 14, opacity: 0 });
 
       // ── Master pinned timeline ────────────────────────────────────────
       const tl = gsap.timeline({
@@ -52,11 +56,14 @@ export function Stats17() {
         0.5
       );
 
-      // Phase 3 (0.62 → 0.85): Text content slides up + fades in
-      tl.to(".s17-content",
-        { opacity: 1, y: 0, ease: "power3.out", duration: 0.23 },
-        0.62
-      );
+      // Phase 3 (0.62): Container wird sichtbar
+      tl.to(".s17-content", { opacity: 1, duration: 0.05 }, 0.62);
+
+      // Phase 3: Text-Elemente einzeln animiert
+      tl.to(".s17-eyebrow",      { y: 0, opacity: 1, ease: "power3.out", duration: 0.1 }, 0.64);
+      tl.to(".s17-heading-line", { y: "0%", ease: "power3.out", stagger: 0.06, duration: 0.14 }, 0.70);
+      tl.to(".s17-sub",          { y: 0, opacity: 1, ease: "power3.out", duration: 0.1 }, 0.82);
+      tl.to(".s17-cta-btn",      { y: 0, opacity: 1, ease: "back.out(1.4)", duration: 0.1 }, 0.88);
 
       // Phase 3 parallel: Stat counters tick up
       const numEls = gsap.utils.toArray(".s17-num", sectionRef.current);
@@ -114,19 +121,24 @@ export function Stats17() {
 
           {/* Left */}
           <div>
-            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.28em] text-[#B8935A] md:mb-4">
+            <p className="s17-eyebrow mb-3 font-body text-sm font-semibold uppercase tracking-[0.28em] text-[#B8935A] md:mb-4">
               Unsere Zahlen
             </p>
             <h2 className="mb-5 font-heading text-5xl font-bold leading-tight tracking-tight text-[#141414] md:mb-6 md:text-7xl lg:text-8xl">
-              Ergebnisse,<br />die für sich sprechen
+              <span style={{ display: "block", overflow: "hidden", paddingBottom: "0.05em" }}>
+                <span className="s17-heading-line block">Ergebnisse,</span>
+              </span>
+              <span style={{ display: "block", overflow: "hidden", paddingBottom: "0.05em" }}>
+                <span className="s17-heading-line block">die für sich sprechen</span>
+              </span>
             </h2>
-            <p className="font-body text-base text-[#141414]/65 md:text-lg">
+            <p className="s17-sub font-body text-base text-[#141414]/65 md:text-lg">
               Seit 20 Jahren in Mühldorf am Inn. Qualität, die bleibt. Ein Name.
             </p>
             <div className="mt-8">
               <a
                 href="/kontakt"
-                className="group inline-flex items-center gap-3 border border-[#B8935A]/30 px-7 py-3 font-body text-sm font-semibold tracking-[0.14em] uppercase text-[#B8935A] transition-all duration-200 hover:bg-[#B8935A] hover:text-white hover:border-[#B8935A]"
+                className="s17-cta-btn group inline-flex items-center gap-3 border border-[#B8935A]/30 px-7 py-3 font-body text-sm font-semibold tracking-[0.14em] uppercase text-[#B8935A] transition-all duration-200 hover:bg-[#B8935A] hover:text-white hover:border-[#B8935A]"
               >
                 Angebot anfragen
                 <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

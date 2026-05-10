@@ -180,14 +180,6 @@ export function HeroLeistungen() {
         }}
       />
 
-      {/* Decorative grid lines */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.07]"
-           style={{
-             backgroundImage:
-               "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
-             backgroundSize: "120px 120px",
-           }}
-      />
 
       {/* Vertical side mark removed — collided with the oversized heading. */}
 

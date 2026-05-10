@@ -5,28 +5,30 @@ import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 export function Header78() {
   const sectionRef = useRef(null);
-  const imageRef = useRef(null);
-  const cursorRef = useRef(null);
+  const imageRef   = useRef(null);
+  const cursorRef  = useRef(null);
 
-  // Smooth cursor follow via gsap.ticker — no React state, no re-renders
+  // Cursor follow + clip-path reveal + wall-text erase effect
   useEffect(() => {
-    const section = sectionRef.current;
+    const section  = sectionRef.current;
     const cursorEl = cursorRef.current;
-    const imageEl = imageRef.current;
+    const imageEl  = imageRef.current;
     if (!section || !cursorEl || !imageEl) return;
 
     let targetX = 0;
     let targetY = 0;
     let smoothX = 0;
     let smoothY = 0;
-    let active = false;
+    let active  = false;
+
+    const RADIUS = 180;
 
     const onMove = (e) => {
       const rect = section.getBoundingClientRect();
       targetX = e.clientX - rect.left;
       targetY = e.clientY - rect.top;
       if (!active) {
-        active = true;
+        active  = true;
         smoothX = targetX;
         smoothY = targetY;
         cursorEl.style.opacity = "1";
@@ -41,16 +43,14 @@ export function Header78() {
 
     const tick = () => {
       if (!active) return;
-      // Lerp smoothing — feels weighty but still responsive
       smoothX += (targetX - smoothX) * 0.22;
       smoothY += (targetY - smoothY) * 0.22;
       cursorEl.style.transform = `translate3d(${smoothX}px, ${smoothY}px, 0) translate(-50%, -50%)`;
-      imageEl.style.clipPath = `circle(180px at ${smoothX}px ${smoothY}px)`;
+      imageEl.style.clipPath = `circle(${RADIUS}px at ${smoothX}px ${smoothY}px)`;
     };
 
-    // Ensure clean initial state (guards against StrictMode double-invoke)
     cursorEl.style.opacity = "0";
-    imageEl.style.clipPath = "circle(0px at 50% 50%)";
+    imageEl.style.clipPath  = "circle(0px at 50% 50%)";
 
     section.addEventListener("mousemove", onMove);
     section.addEventListener("mouseleave", onLeave);
@@ -60,19 +60,18 @@ export function Header78() {
       section.removeEventListener("mousemove", onMove);
       section.removeEventListener("mouseleave", onLeave);
       gsap.ticker.remove(tick);
-      // Reset DOM state so re-mount starts clean (StrictMode / SPA navigation)
       active = false;
       cursorEl.style.opacity = "0";
-      imageEl.style.clipPath = "circle(0px at 50% 50%)";
+      imageEl.style.clipPath  = "circle(0px at 50% 50%)";
     };
   }, []);
 
+  // Hero reveal animations
   useEffect(() => {
     const scope = sectionRef.current;
     if (!scope) return;
 
     const ctx = gsap.context(() => {
-      // Parallax on scroll
       gsap.to(".hero-bg-img", {
         yPercent: -12,
         ease: "none",
@@ -84,7 +83,6 @@ export function Header78() {
         },
       });
 
-      // Reveal animations trigger when section scrolls into view
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: scope,
@@ -118,7 +116,7 @@ export function Header78() {
       className="relative overflow-hidden"
       style={{ height: "calc(100vh - 4.5rem)", cursor: "none" }}
     >
-      {/* ── Bild Nachher — vollflächiger Hintergrund ── */}
+      {/* Bild Nachher — vollflächiger Hintergrund */}
       <img
         src="/images/hero-nachher.png"
         alt="Fertig gestaltete Wand"
@@ -135,42 +133,34 @@ export function Header78() {
         }}
       />
 
-      {/* ── Bild Vorher — Hover-Reveal (clip-path driven directly via DOM) ── */}
+      {/* Bild Vorher — Pinsel-Reveal via clip-path */}
       <img
         ref={imageRef}
         src="/images/hero-vorher.png"
         alt="Wand vor der Behandlung"
         className="absolute inset-0 h-full w-full object-cover object-center"
-        style={{
-          clipPath: "circle(0px at 50% 50%)",
-          willChange: "clip-path",
-        }}
+        style={{ clipPath: "circle(0px at 50% 50%)", willChange: "clip-path" }}
       />
 
-      {/* ── Custom Cursor: outer ring + inner dot ── */}
+      {/* Custom Cursor: outer ring + inner dot */}
       <div
         ref={cursorRef}
         className="pointer-events-none absolute left-0 top-0 z-20 flex items-center justify-center"
         style={{
-          width: 48,
-          height: 48,
+          width: 48, height: 48,
           opacity: 0,
           transition: "opacity 0.25s ease",
           willChange: "transform",
         }}
         aria-hidden="true"
       >
-        {/* Outer ring */}
         <span className="absolute inset-0 rounded-full border" style={{ borderColor: "rgba(184,147,90,0.7)" }} />
-        {/* Inner dot */}
         <span className="block h-1.5 w-1.5 rounded-full" style={{ background: "#B8935A" }} />
       </div>
 
-
-      {/* ── Text-Inhalt ── */}
+      {/* Text-Inhalt */}
       <div className="relative z-10 flex h-full flex-col justify-center px-[6%] pt-20 pb-12 md:max-w-[58%] lg:max-w-[52%]">
 
-        {/* Eyebrow */}
         <div className="mb-12 flex items-center gap-4">
           <span className="hero-eyebrow-line h-px w-10 flex-shrink-0" style={{ background: "#B8935A" }} />
           <div style={{ overflow: "hidden" }}>
@@ -180,32 +170,29 @@ export function Header78() {
           </div>
         </div>
 
-        {/* Headline – each line in its own overflow:hidden mask */}
         <h1
           className="mb-6 font-serif font-bold tracking-tight text-white"
           style={{ fontSize: "clamp(2.4rem, 4.8vw, 5.8rem)", lineHeight: 1.04, marginBottom: "3.5rem" }}
         >
           <span className="block" style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
             <span className="hero-headline-inner block">
-              Malen,{" "}
-              <em className="italic" style={{ color: "#B8935A" }}>was schützt.</em>
+              Farbe,{" "}
+              <em className="italic" style={{ color: "#B8935A" }}>die begeistert.</em>
             </span>
           </span>
           <span className="block" style={{ overflow: "hidden", paddingBottom: "0.1em" }}>
             <span className="hero-headline-inner block">
-              Seit 20 Jahren.
+              Handwerk, das bleibt.
             </span>
           </span>
         </h1>
 
-        {/* Body */}
         <p className="hero-body mb-16 max-w-[440px] font-body text-base leading-relaxed text-white/70 md:text-lg">
           Malerei, Bautenschutz, Schimmelsanierung und mehr aus Mühldorf am Inn.
           Malerei & Bautenschutz Sascha Schmidt steht seit 20 Jahren für Qualität,
           Verlässlichkeit und langfristigen Schutz.
         </p>
 
-        {/* CTAs — both get the fill-on-hover effect */}
         <div className="flex flex-wrap gap-3">
           <a
             href="/kontakt"
@@ -224,20 +211,6 @@ export function Header78() {
         </div>
       </div>
 
-      {/* Scroll-Indikator — CSS fade-in, unabhängig von GSAP */}
-      <div
-        className="absolute bottom-8 left-[6%] z-10 hidden lg:flex items-center gap-3"
-        style={{ animation: "heroScrollFadeIn 1s ease 0.8s both" }}
-      >
-        <span className="h-px w-8" style={{ background: "rgba(184,147,90,0.4)" }} />
-        <span className="font-body text-xs uppercase tracking-[0.22em]" style={{ color: "rgba(184,147,90,0.65)" }}>Scroll</span>
-      </div>
-      <style>{`
-        @keyframes heroScrollFadeIn {
-          from { opacity: 0; transform: translateX(-12px); }
-          to   { opacity: 1; transform: translateX(0); }
-        }
-      `}</style>
     </section>
   );
 }
