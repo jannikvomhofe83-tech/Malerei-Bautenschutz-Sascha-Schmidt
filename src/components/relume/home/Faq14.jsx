@@ -6,28 +6,28 @@ import { gsap } from "../../../utils/gsap";
 
 const faqs = [
   {
-    q: "Welche Leistungen bietet Schmid-Bau GmbH an?",
-    a: "Wir bieten Schlüsselfertiges Bauen, Planung, Rohbau, Renovierung & Sanierung, Tiefbau, landwirtschaftliche Hallen, Baustoffhandel, Transporte, Gerüstbau sowie Ladekranarbeiten an — alles aus einer Hand.",
+    q: "Welche Leistungen bietet Malerei & Bautenschutz Sascha Schmidt an?",
+    a: "Wir bieten Malerei, Farbgestaltung und Beratung, fachgerechte Schimmelsanierung, Holzschutz, Spachtelarbeiten (Q1–Q4), Verputzen, Tapezieren, Lackieren, Streicharbeiten aller Art, Airless-Spritzverfahren, Bodenverlegung, Parkettschleifen, Betonsanierung und hochwertige Beschichtungen an — alles aus einer Hand.",
   },
   {
     q: "Wie lange sind Sie schon im Geschäft?",
-    a: "Seit 1992. Als Familienbetrieb gegründet, übernahm Michael Schmid 2007 das väterliche Unternehmen. Seit 2015 sind wir in einer ehemaligen Schnapsbrennerei in Berglern ansässig — ein Standort mit Charakter.",
+    a: "Sascha Schmidt ist seit 20 Jahren im Bauhandwerk als Maler und Lackierer tätig. In dieser Zeit haben wir umfassendes Fachwissen aufgebaut, um die individuellen Anforderungen unserer Kunden zu erfüllen.",
   },
   {
     q: "Welche Regionen betreuen Sie?",
-    a: "Unser Schwerpunkt liegt in der Region Erding und Umgebung. Wir sind jedoch weit über die Region hinaus bekannt und für jedes Bauvorhaben der richtige Ansprechpartner.",
+    a: "Unser Schwerpunkt liegt in Mühldorf am Inn und Umgebung. Wir sind Ihr kompetenter Partner für professionelle Maler- und Bautenschutzarbeiten in der Region.",
   },
   {
-    q: "Arbeiten Sie mit eigenem Personal oder Subunternehmern?",
-    a: "Wir setzen auf eigenes, ausgebildetes Fachpersonal. Unser zehnköpfiges Team übernimmt alle Leistungen selbst — von Hochbau über Tiefbau bis zu Transporten und Gerüstbau.",
+    q: "Was ist eine Schimmelsanierung und wann brauche ich sie?",
+    a: "Bei nassen Wänden, Rissen im Mauerwerk oder Schimmel in Wohnräumen bieten wir fachgerechte Schimmelsanierung an. Wir treffen Maßnahmen an Bauwerken, um sie vor schädlichen Einwirkungen zu schützen — im Innen- und Außenbereich.",
   },
   {
-    q: "Können Sie auch Renovierungen und Sanierungen durchführen?",
-    a: "Ja. Renovierung und Sanierung zählen zu unseren Kernleistungen. Wir steigern den Wert Ihrer Immobilie durch optimierte Dämmung, neue Fenster, smarte Technologien und fachgerechte Ausführung.",
+    q: "Was bedeuten Spachtelarbeiten Q1 bis Q4?",
+    a: "Die Qualitätsstufen Q1 bis Q4 beschreiben den Grad der Oberflächenglätte bei Spachtelarbeiten. Q1 ist die einfachste Stufe für verdeckte Bereiche, Q4 die hochwertigste für stark streiflichtbelastete Flächen — wir führen alle Qualitätsstufen fachgerecht aus.",
   },
   {
     q: "Wie nehme ich Kontakt auf?",
-    a: "Rufen Sie uns an unter 08762 / 426420 oder schreiben Sie uns an schmid-bau@gmx.net. Sie finden uns in der Kreuzstraße 19, 85459 Berglern — wir melden uns schnellstmöglich.",
+    a: "Rufen Sie uns an unter 01520 7827485 (Mo–Fr 07:00–18:00, Sa 07:00–12:00) oder besuchen Sie uns: Am Industriepark 10, 84453 Mühldorf am Inn. Wir beraten Sie gerne unverbindlich.",
   },
 ];
 
@@ -110,7 +110,7 @@ export function Faq14() {
     <section
       ref={sectionRef}
       className="relative overflow-hidden"
-      style={{ backgroundColor: "#FDFCF8" }}
+      style={{ backgroundColor: "#FAFAFA" }}
     >
 
       {/* Ghost heading — parallax */}
@@ -120,7 +120,7 @@ export function Faq14() {
         aria-hidden="true"
       >
         <span
-          className="font-heading font-bold leading-none text-[#0E2A6B]"
+          className="font-heading font-bold leading-none text-[#B8935A]"
           style={{
             fontSize: "clamp(8rem, 22vw, 26rem)",
             opacity: 0.045,
@@ -138,20 +138,20 @@ export function Faq14() {
         <div className="mb-16 md:mb-20 grid grid-cols-1 gap-6 md:grid-cols-[1fr_auto] md:items-end">
           <div>
             <div className="mb-5 flex items-center gap-4">
-              <div className="faq-eyebrow-line h-px w-8 bg-[#0E2A6B]" />
-              <p className="faq-eyebrow-label font-body text-xs font-semibold uppercase tracking-[0.32em] text-[#0E2A6B]">
+              <div className="faq-eyebrow-line h-px w-8 bg-[#B8935A]" />
+              <p className="faq-eyebrow-label font-body text-xs font-semibold uppercase tracking-[0.32em] text-[#B8935A]">
                 Häufige Fragen
               </p>
             </div>
             <h2
-              className="font-heading font-bold leading-[1.02] tracking-tight text-[#0A1628]"
+              className="font-heading font-bold leading-[1.02] tracking-tight text-[#141414]"
               style={{ fontSize: "clamp(2.8rem, 6vw, 6rem)" }}
             >
               <span className="block" style={{ overflow: "hidden", paddingBottom: "0.05em" }}>
                 <span className="faq-headline-inner block">Was Sie wissen</span>
               </span>
               <span className="block" style={{ overflow: "hidden", paddingBottom: "0.05em" }}>
-                <em className="faq-headline-inner not-italic text-[#0E2A6B]/35 block">wollen.</em>
+                <em className="faq-headline-inner not-italic text-[#B8935A]/35 block">wollen.</em>
               </span>
             </h2>
           </div>
@@ -165,21 +165,21 @@ export function Faq14() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.25 }}
-                className="font-heading text-5xl font-bold tabular-nums text-[#0E2A6B]/15"
+                className="font-heading text-5xl font-bold tabular-nums text-[#B8935A]/15"
               >
                 {openIdx !== null ? String(openIdx + 1).padStart(2, "0") : "—"}
               </motion.span>
             </AnimatePresence>
-            <span className="font-body text-xs text-[#5A6478] tracking-widest">
+            <span className="font-body text-xs text-[#6B6B6B] tracking-widest">
               / {String(faqs.length).padStart(2, "0")}
             </span>
           </div>
         </div>
 
         {/* Progress bar */}
-        <div className="faq-track mb-0 h-px w-full bg-[#0E2A6B]/10" />
+        <div className="faq-track mb-0 h-px w-full bg-[#B8935A]/10" />
         <motion.div
-          className="mb-0 h-px bg-[#0E2A6B] origin-left"
+          className="mb-0 h-px bg-[#B8935A] origin-left"
           animate={{
             scaleX: openIdx !== null ? (openIdx + 1) / faqs.length : 0,
           }}
@@ -205,7 +205,7 @@ export function Faq14() {
                     style={{
                       fontSize: "clamp(0.7rem, 1.2vw, 0.85rem)",
                       letterSpacing: "0.1em",
-                      color: isOpen ? "#0E2A6B" : "rgba(10,22,40,0.32)",
+                      color: isOpen ? "#B8935A" : "rgba(20,20,20,0.32)",
                       paddingTop: "0.35em",
                     }}
                   >
@@ -217,7 +217,7 @@ export function Faq14() {
                     className="flex-1 font-heading font-bold leading-snug tracking-tight transition-colors duration-300"
                     style={{
                       fontSize: "clamp(1.05rem, 2vw, 1.45rem)",
-                      color: isOpen ? "#0A1628" : "rgba(10,22,40,0.62)",
+                      color: isOpen ? "#141414" : "rgba(20,20,20,0.62)",
                     }}
                   >
                     {faq.q}
@@ -227,7 +227,7 @@ export function Faq14() {
                   <div className="relative shrink-0 mt-1 flex h-7 w-7 items-center justify-center">
                     <span
                       className="absolute block h-px w-3.5 transition-colors duration-300"
-                      style={{ background: isOpen ? "#0E2A6B" : "rgba(10,22,40,0.35)" }}
+                      style={{ background: isOpen ? "#B8935A" : "rgba(20,20,20,0.35)" }}
                     />
                     <motion.span
                       className="absolute block h-px w-3.5"
@@ -235,7 +235,7 @@ export function Faq14() {
                       transition={{ duration: 0.3, ease: EASE }}
                       style={{
                         rotate: "90deg",
-                        background: isOpen ? "#0E2A6B" : "rgba(10,22,40,0.35)",
+                        background: isOpen ? "#B8935A" : "rgba(20,20,20,0.35)",
                       }}
                     />
                   </div>
@@ -255,9 +255,9 @@ export function Faq14() {
                       <div className="flex gap-5 md:gap-8 pb-8">
                         {/* Blue left accent */}
                         <div className="shrink-0" style={{ width: "clamp(0.7rem, 1.2vw, 0.85rem)" }}>
-                          <div className="h-full w-px bg-[#0E2A6B]/50 ml-auto" />
+                          <div className="h-full w-px bg-[#B8935A]/50 ml-auto" />
                         </div>
-                        <p className="font-body text-sm leading-relaxed text-[#5A6478] md:text-base max-w-2xl">
+                        <p className="font-body text-sm leading-relaxed text-[#6B6B6B] md:text-base max-w-2xl">
                           {faq.a}
                         </p>
                       </div>
@@ -268,7 +268,7 @@ export function Faq14() {
                 {/* Separator */}
                 <div
                   className="h-px w-full transition-colors duration-300"
-                  style={{ background: isOpen ? "rgba(14,42,107,0.18)" : "rgba(14,42,107,0.08)" }}
+                  style={{ background: isOpen ? "rgba(184,147,90,0.18)" : "rgba(184,147,90,0.08)" }}
                 />
               </div>
             );
@@ -277,12 +277,12 @@ export function Faq14() {
 
         {/* CTA */}
         <div className="faq-cta mt-16 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-body text-sm text-[#5A6478]">
+          <p className="font-body text-sm text-[#6B6B6B]">
             Noch weitere Fragen? Wir sind persönlich für Sie da.
           </p>
           <a
             href="/kontakt"
-            className="group inline-flex items-center gap-4 border border-[#0E2A6B]/30 px-8 py-4 font-body text-sm font-semibold tracking-widest text-[#0E2A6B] uppercase transition-all duration-300 hover:bg-[#0E2A6B] hover:text-white"
+            className="group inline-flex items-center gap-4 border border-[#B8935A]/30 px-8 py-4 font-body text-sm font-semibold tracking-widest text-[#B8935A] uppercase transition-all duration-300 hover:bg-[#B8935A] hover:text-white"
           >
             Kontakt aufnehmen
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>

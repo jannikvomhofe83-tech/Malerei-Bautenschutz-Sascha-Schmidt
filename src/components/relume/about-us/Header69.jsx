@@ -18,7 +18,7 @@ export function Header69() {
         <p className="font-body text-base leading-relaxed text-white/65 md:text-lg">
           Seit 1952 bauen wir im Raum Erding, Erding und München-Ost.
           Was als kleine Maurerfirma begann, ist heute ein leistungsstarkes
-          Bauunternehmen – mit eigenem Fachpersonal, moderner Technik und
+          Malerei & Bautenschutz – mit eigenem Fachpersonal, moderner Technik und
           dem Anspruch, Qualität zu liefern, die Generationen überdauert.
         </p>
       </div>
@@ -26,7 +26,7 @@ export function Header69() {
         <img
           src="/images/villa-twilight.jpg"
           className="size-full object-cover"
-          alt="Schmid-Bau GmbH"
+          alt="Malerei & Bautenschutz Sascha Schmidt"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/20" />
       </div>

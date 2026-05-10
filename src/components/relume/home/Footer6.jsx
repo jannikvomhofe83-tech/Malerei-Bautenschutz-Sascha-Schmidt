@@ -6,18 +6,17 @@ const footerLinks = [
   {
     heading: "Leistungen",
     links: [
-      { label: "Neubau", href: "/leistungen" },
-      { label: "Renovierung", href: "/leistungen" },
-      { label: "Anbauten", href: "/leistungen" },
-      { label: "Beratung", href: "/leistungen" },
-      { label: "Restaurierung", href: "/leistungen" },
+      { label: "Malerei & Farbgestaltung", href: "/leistungen" },
+      { label: "Bautenschutz", href: "/leistungen" },
+      { label: "Schimmelsanierung", href: "/leistungen" },
+      { label: "Bodenverlegung", href: "/leistungen" },
+      { label: "Betonsanierung", href: "/leistungen" },
     ],
   },
   {
     heading: "Unternehmen",
     links: [
       { label: "Über uns", href: "/ueber-uns" },
-      { label: "Unser Team", href: "/ueber-uns" },
       { label: "Unser Prozess", href: "/prozess" },
       { label: "Referenzen", href: "/referenzen" },
       { label: "Auszeichnungen", href: "/auszeichnungen" },
@@ -29,16 +28,14 @@ const footerLinks = [
       { label: "Alle Projekte", href: "/projekte" },
       { label: "Aktuelle Arbeiten", href: "/projekte" },
       { label: "Fotogalerie", href: "/projekte" },
-      { label: "Blog", href: "/blog" },
     ],
   },
   {
     heading: "Kontakt",
     links: [
-      { label: "Beratung anfragen", href: "/kontakt" },
+      { label: "Angebot anfragen", href: "/kontakt" },
       { label: "Kontakt aufnehmen", href: "/kontakt" },
       { label: "FAQ", href: "/kontakt" },
-      { label: "Preise", href: "/preise" },
     ],
   },
   {
@@ -55,8 +52,8 @@ const footerLinks = [
     links: [
       { label: "Instagram", href: "#" },
       { label: "Facebook", href: "#" },
-      { label: "LinkedIn", href: "#" },
-      { label: "YouTube", href: "#" },
+      { label: "Google", href: "#" },
+      { label: "MyHammer", href: "#" },
     ],
   },
 ];
@@ -72,7 +69,7 @@ export function Footer6() {
               Immer auf dem Laufenden
             </p>
             <p className="font-body text-sm text-text-alternative/60">
-              Tipps und Einblicke für Ihr Bauprojekt in Bayern.
+              Tipps und Einblicke rund um Malerei & Bautenschutz in der Region.
             </p>
           </div>
           <form
@@ -119,10 +116,10 @@ export function Footer6() {
         {/* Bottom bar */}
         <div className="border-t border-border-alternative pt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
           <a href="/" className="font-heading text-base font-bold tracking-[0.12em] uppercase text-text-alternative">
-            Schmid-Bau
+            Schmidt Maler
           </a>
           <p className="font-body text-xs text-text-alternative/40">
-            © {new Date().getFullYear()} Schmid-Bau GmbH. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} Malerei & Bautenschutz Sascha Schmidt. Alle Rechte vorbehalten.
           </p>
         </div>
       </div>

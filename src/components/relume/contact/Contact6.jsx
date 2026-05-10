@@ -4,44 +4,44 @@ import React from "react";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 
 const inputCls = [
-  "w-full border border-[rgba(14,42,107,0.20)] bg-white px-4 py-3",
-  "font-body text-sm text-[#0A1628] placeholder:text-[#0A1628]/40",
+  "w-full border border-[rgba(184,147,90,0.20)] bg-white px-4 py-3",
+  "font-body text-sm text-[#141414] placeholder:text-[#141414]/40",
   "outline-none transition-colors duration-200",
-  "focus:border-[#0E2A6B] focus:ring-0",
+  "focus:border-[#B8935A] focus:ring-0",
 ].join(" ");
 
-const labelCls = "block mb-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-[#0A1628]/60";
+const labelCls = "block mb-2 font-body text-xs font-semibold uppercase tracking-[0.15em] text-[#141414]/60";
 
 export function Contact6() {
   return (
-    <section style={{ backgroundColor: "#FDFCF8" }} className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section style={{ backgroundColor: "#FAFAFA" }} className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container grid grid-cols-1 items-start gap-y-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-20">
 
         {/* Left: info */}
         <div>
           <div className="mb-8">
-            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
+            <p className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
               Anfragen
             </p>
-            <h2 className="mb-5 font-heading text-5xl font-bold text-[#0A1628] md:text-6xl lg:text-7xl">
+            <h2 className="mb-5 font-heading text-5xl font-bold text-[#141414] md:text-6xl lg:text-7xl">
               Ihr Projekt
             </h2>
-            <p className="font-body text-base text-[#0A1628]/60">
+            <p className="font-body text-base text-[#141414]/60">
               Wir antworten innerhalb eines Arbeitstages
             </p>
           </div>
           <div className="grid gap-4">
             <div className="flex items-center gap-4">
-              <BiEnvelope className="size-5 flex-none text-[#0E2A6B]" />
-              <p className="font-body text-sm text-[#0A1628]">schmid-bau@gmx.net</p>
+              <BiEnvelope className="size-5 flex-none text-[#B8935A]" />
+              <p className="font-body text-sm text-[#141414]">info@malerei-schmidt.de</p>
             </div>
             <div className="flex items-center gap-4">
-              <BiPhone className="size-5 flex-none text-[#0E2A6B]" />
-              <p className="font-body text-sm text-[#0A1628]">08762 / 426420</p>
+              <BiPhone className="size-5 flex-none text-[#B8935A]" />
+              <p className="font-body text-sm text-[#141414]">Auf Anfrage</p>
             </div>
             <div className="flex items-center gap-4">
-              <BiMap className="size-5 flex-none text-[#0E2A6B]" />
-              <p className="font-body text-sm text-[#0A1628]">Kreuzstraße 19, 85459 Berglern</p>
+              <BiMap className="size-5 flex-none text-[#B8935A]" />
+              <p className="font-body text-sm text-[#141414]">Mühldorf am Inn</p>
             </div>
           </div>
         </div>
@@ -95,9 +95,9 @@ export function Contact6() {
                     type="radio"
                     name="beschreibung"
                     value={opt}
-                    className="appearance-none size-4 rounded-full border-2 border-[rgba(14,42,107,0.30)] checked:border-[#0E2A6B] checked:bg-[#0E2A6B] transition-colors duration-200 cursor-pointer flex-none"
+                    className="appearance-none size-4 rounded-full border-2 border-[rgba(184,147,90,0.30)] checked:border-[#B8935A] checked:bg-[#B8935A] transition-colors duration-200 cursor-pointer flex-none"
                   />
-                  <span className="font-body text-sm text-[#0A1628]/70 group-hover:text-[#0A1628] transition-colors">{opt}</span>
+                  <span className="font-body text-sm text-[#141414]/70 group-hover:text-[#141414] transition-colors">{opt}</span>
                 </label>
               ))}
             </div>
@@ -117,9 +117,9 @@ export function Contact6() {
             <input
               type="checkbox"
               id="terms"
-              className="mt-0.5 size-4 appearance-none border-2 border-[rgba(14,42,107,0.30)] checked:border-[#0E2A6B] checked:bg-[#0E2A6B] transition-colors duration-200 cursor-pointer flex-none"
+              className="mt-0.5 size-4 appearance-none border-2 border-[rgba(184,147,90,0.30)] checked:border-[#B8935A] checked:bg-[#B8935A] transition-colors duration-200 cursor-pointer flex-none"
             />
-            <label htmlFor="terms" className="font-body text-sm text-[#0A1628]/60 cursor-pointer leading-snug">
+            <label htmlFor="terms" className="font-body text-sm text-[#141414]/60 cursor-pointer leading-snug">
               Ich akzeptiere die Datenschutzerklärung
             </label>
           </div>
@@ -127,7 +127,7 @@ export function Contact6() {
           <div>
             <button
               type="submit"
-              className="inline-flex items-center gap-2 border border-[#0E2A6B] bg-[#0E2A6B] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#0E2A6B]"
+              className="inline-flex items-center gap-2 border border-[#B8935A] bg-[#B8935A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#B8935A]"
             >
               Senden
               <span>→</span>

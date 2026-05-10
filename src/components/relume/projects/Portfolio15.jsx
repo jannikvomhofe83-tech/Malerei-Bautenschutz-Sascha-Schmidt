@@ -26,62 +26,62 @@ const PLACEHOLDER = "/images/placeholder.svg";
 const projects = [
   {
     id: "01",
-    title: "Kindergarten Erding",
-    category: "Öffentlicher Bau",
-    desc: "Neubau einer zweigruppigen Kindertagesstätte mit Außenanlage",
-    location: "Erding",
-    img: "/images/bild-kindergarten.jpg",
-    detail: "Im Auftrag der Gemeinde Erding errichtete Schmid-Bau GmbH eine moderne Kindertagesstätte mit zwei Gruppen, Technikraum und gestalteter Außenanlage. Das Gebäude erfüllt höchste energetische Anforderungen und überzeugt durch eine freundliche, funktionale Architektur. Alle Arbeiten wurden termingerecht und im vereinbarten Kostenrahmen abgeschlossen.",
+    title: "Innenraumgestaltung Mühldorf am Inn",
+    category: "Malerei & Farbgestaltung",
+    desc: "Vollständige Farbgestaltung eines Wohnhauses – Airless-Spritzverfahren und individuelle Farbberatung",
+    location: "Mühldorf am Inn",
+    img: "/images/projekt-innenraum.png",
+    detail: "Für eine Privatfamilie in Mühldorf am Inn übernahmen wir die komplette Innenraumgestaltung. Von der Farbberatung über Spachtelarbeiten in Q3-Qualität bis hin zum abschließenden Farbanstrich in Airless-Technik – alles aus einer Hand. Das Ergebnis: ein stimmiges Raumkonzept, das Wärme und Modernität verbindet.",
     images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
   },
   {
     id: "02",
-    title: "Feuerwehrhaus Berglern",
-    category: "Öffentlicher Bau",
-    desc: "Neubau des Feuerwehrgerätehauses mit Schulungsraum und Stellplätzen",
-    location: "Berglern",
-    img: "/images/bild-feuerwehr.jpg",
-    detail: "Für die Freiwillige Feuerwehr Berglern realisierte Schmid-Bau GmbH einen modernen Neubau mit drei Fahrzeugstellplätzen, Umkleideräumen, Schulungsraum und Außenbereich. Konstruktion und Ausbau wurden vollständig in Eigenregie koordiniert – von der Planung bis zur schlüsselfertigen Übergabe.",
+    title: "Schimmelsanierung Wohnanlage",
+    category: "Bautenschutz & Schimmelsanierung",
+    desc: "Fachgerechte Schimmelsanierung in einer Mehrfamilienanlage – Ursachenbeseitigung und Langzeitschutz",
+    location: "Mühldorf am Inn",
+    img: "/images/projekt-sanierung.png",
+    detail: "In einer größeren Wohnanlage traten in mehreren Einheiten Schimmelprobleme auf. Wir analysierten die Ursachen, führten eine fachgerechte Schimmelsanierung durch und sorgten mit geeigneten Schutzanstrichen und Dichtungsmaßnahmen für dauerhaften Feuchtigkeitsschutz. Alle Arbeiten erfolgten nach anerkannten Regeln der Technik.",
     images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
   },
   {
     id: "03",
-    title: "Mehrzweckhalle Taufkirchen",
-    category: "Gewerbebau",
-    desc: "Neubau einer Gemeinschafts- und Veranstaltungshalle mit Bühne",
-    location: "Taufkirchen / Vils",
-    img: "/images/bild-mehrzweck.jpg",
-    detail: "In Taufkirchen an der Vils entstand eine großzügige Mehrzweckhalle für Veranstaltungen, Vereine und Gemeindezwecke. Schmid-Bau GmbH übernahm alle Rohbau- und Ausbauarbeiten. Besonderes Merkmal ist die flexible Raumaufteilung sowie die hochwertige Holz-Beton-Konstruktion der Dachkonstruktion.",
+    title: "Fassadenanstrich Gewerbegebäude",
+    category: "Malerei · Außenanstrich & Bautenschutz",
+    desc: "Kompletter Fassadenputz und Neuanstrich eines Gewerbegebäudes – witterungsbeständig und langlebig",
+    location: "Mühldorf am Inn",
+    img: "/images/projekt-fassade.png",
+    detail: "Für ein Gewerbegebäude im Raum Mühldorf übernahmen wir die vollständige Fassadensanierung. Rissige Putzflächen wurden instand gesetzt, der Untergrund vorbehandelt und anschließend mit einem hochwertigen Fassadenfarbanstrich versehen. Das Ergebnis schützt das Gebäude langfristig vor Witterungseinflüssen und überzeugt optisch.",
     images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
   },
   {
     id: "04",
-    title: "Einfamilienhaus Dorfen",
-    category: "Wohnbau",
-    desc: "Schlüsselfertiger Neubau eines Einfamilienhauses mit Carport",
-    location: "Dorfen",
-    img: "/images/bild-wohnhaus.jpg",
-    detail: "Für eine Privatfamilie in Dorfen realisierte Schmid-Bau GmbH ein schlüsselfertiges Einfamilienhaus mit Keller, Carport und Gartengestaltung. Das klare, moderne Erscheinungsbild mit hochwertigen Materialien und durchdachter Grundrissplanung wurde in enger Zusammenarbeit mit dem Bauherrn entwickelt.",
+    title: "Spachtelarbeiten Bürogebäude",
+    category: "Spachtel- & Putzarbeiten",
+    desc: "Hochwertige Spachtelarbeiten Q3/Q4 für ein modernes Bürogebäude – perfekte Oberflächen als Basis",
+    location: "Mühldorf am Inn",
+    img: "/images/service-spachtel.png",
+    detail: "Für ein neu errichtetes Bürogebäude führten wir umfangreiche Spachtelarbeiten in Qualitätsstufe Q3 und Q4 durch. Die hohen Anforderungen an Ebenheit und Oberflächengüte wurden vollumfänglich erfüllt. Als Grundlage für den anschließenden Farbanstrich und hochwertige Wandbeläge sorgten wir für perfekte, porenfreie Flächen.",
     images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
   },
   {
     id: "05",
-    title: "Gewerbehalle Walpertskirchen",
-    category: "Industriebau",
-    desc: "Neubau einer Lager- und Betriebshalle mit Bürotrakt",
-    location: "Walpertskirchen",
-    img: "/images/bild-gewerbehalle.jpg",
-    detail: "Für ein regional ansässiges Unternehmen errichtete Schmid-Bau GmbH in Walpertskirchen eine Gewerbe- und Lagerhalle mit angeschlossenem Bürotrakt. Die Stahlkonstruktion bietet maximale Nutzflexibilität bei kurzer Bauzeit. Sämtliche Erschließungs- und Außenanlagenarbeiten wurden ebenfalls von Schmid-Bau übernommen.",
+    title: "Bodenverlegung & Parkettschleifen",
+    category: "Bodenverlegung & Parkett",
+    desc: "Professionelle Bodenverlegung und Parkettschleifen in einem Mehrfamilienhaus",
+    location: "Wasserburg am Inn",
+    img: "/images/service-boden.png",
+    detail: "In einem modernisierten Mehrfamilienhaus übernahmen wir die komplette Bodenverlegung sowie die Aufbereitung des Altbestandes. Alte Parkettböden wurden fachgerecht geschliffen und versiegelt, neue Bereiche mit hochwertigen Böden ausgestattet. Das Ergebnis ist ein einheitliches, gepflegtes Erscheinungsbild auf allen Etagen.",
     images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
   },
   {
     id: "06",
-    title: "Sanierung Bauernhof Buch",
-    category: "Sanierung",
-    desc: "Kernsanierung und Modernisierung eines denkmalgeschützten Bauernhofs",
-    location: "Buch am Buchrain",
-    img: "/images/bild-bauernhof.jpg",
-    detail: "In Buch am Buchrain sanierte Schmid-Bau GmbH einen historischen Bauernhof unter denkmalschutzrechtlichen Auflagen. Neue Fenster, Dämmung, Haustechnik und Fassade wurden behutsam integriert, ohne den traditionellen Charakter des Gebäudes zu beeinträchtigen. Ein anspruchsvolles Projekt, das Handwerkskunst und moderne Bautechnik vereint.",
+    title: "Betonsanierung Tiefgarage",
+    category: "Betonsanierung & Beschichtungen",
+    desc: "Umfangreiche Betonsanierung und Schutzversiegelung einer Tiefgaragenanlage",
+    location: "Waldkraiburg",
+    img: "/images/service-beton.png",
+    detail: "In einer Tiefgarage mit erheblichen Schäden durch Tausalz und Feuchtigkeit führten wir eine vollständige Betonsanierung durch. Schadhafte Bereiche wurden freigelegt, instand gesetzt und mit einer hochwertigen Schutzversiegelung abgedichtet. Die Arbeiten erfolgten unter laufendem Betrieb – koordiniert und termingerecht.",
     images: [PLACEHOLDER, PLACEHOLDER, PLACEHOLDER],
   },
 ];
@@ -101,7 +101,7 @@ export function Portfolio15() {
       // Eyebrow + heading reveal
       gsap.set(eyebrowRef.current, { y: 22, opacity: 0 });
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Abgeschlossene Projekte in Bayern")
+        ? splitWords(headingRef.current, "Ausgewählte Projekte im Raum Mühldorf")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
 
@@ -163,7 +163,7 @@ export function Portfolio15() {
         const activeTl = gsap.timeline({ paused: true })
           .to(rowBg,      { backgroundColor: "rgba(255,255,255,0.05)", duration: 0.4, ease: "power2.out" }, 0)
           .to(goldBorder, { height: "100%", duration: 0.5, ease: "expo.out" }, 0)
-          .to(num,        { color: "#5AACCF", duration: 0.4, ease: "power2.out" }, 0);
+          .to(num,        { color: "#B8935A", duration: 0.4, ease: "power2.out" }, 0);
 
         // Row is "active" while the viewport's vertical center intersects it.
         // start fires when row top crosses the center going up;
@@ -190,7 +190,7 @@ export function Portfolio15() {
 
         {/* Heading */}
         <div className="mb-16 md:mb-20">
-          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
             Referenzprojekte
           </p>
           <h2
@@ -198,7 +198,7 @@ export function Portfolio15() {
             className="font-heading font-bold leading-tight tracking-tight text-white"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
-            Abgeschlossene Projekte in Bayern
+            Ausgewählte Projekte im Raum Mühldorf
           </h2>
         </div>
 
@@ -221,7 +221,7 @@ export function Portfolio15() {
                 {/* Gold left border */}
                 <div
                   data-row-gold-border
-                  className="absolute left-0 top-0 w-[3px] bg-[#5AACCF]"
+                  className="absolute left-0 top-0 w-[3px] bg-[#B8935A]"
                   style={{ height: "0%" }}
                 />
 
@@ -237,7 +237,7 @@ export function Portfolio15() {
 
                   {/* Title + Category */}
                   <div data-row-meta>
-                    <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+                    <p className="mb-2 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
                       {p.category}
                     </p>
                     <h3 className="font-heading text-2xl font-bold text-white md:text-3xl">
@@ -251,7 +251,7 @@ export function Portfolio15() {
                       {p.desc}
                     </p>
                     <div className="mt-3 flex items-center gap-2">
-                      <div className="h-px w-4 bg-[#5AACCF]/50" />
+                      <div className="h-px w-4 bg-[#B8935A]/50" />
                       <p className="font-body text-xs uppercase tracking-[0.2em] text-white/50">
                         {p.location}
                       </p>
@@ -270,11 +270,11 @@ export function Portfolio15() {
                     <button
                       data-row-btn
                       onClick={() => toggle(i)}
-                      className="flex items-center justify-between border border-white/20 px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-white/80 transition-all duration-300 hover:border-[#5AACCF] hover:text-[#5AACCF]"
+                      className="flex items-center justify-between border border-white/20 px-4 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.15em] text-white/80 transition-all duration-300 hover:border-[#B8935A] hover:text-[#B8935A]"
                     >
                       <span>{expanded === i ? "Schließen" : "Mehr erfahren"}</span>
                       <span
-                        className="ml-3 text-[#5AACCF] transition-transform duration-300"
+                        className="ml-3 text-[#B8935A] transition-transform duration-300"
                         style={{ transform: expanded === i ? "rotate(45deg)" : "rotate(0deg)" }}
                       >
                         +
@@ -293,15 +293,15 @@ export function Portfolio15() {
                   <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
                     {/* Info text */}
                     <div>
-                      <p className="mb-3 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+                      <p className="mb-3 font-body text-[11px] font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
                         Projektbeschreibung
                       </p>
                       <p className="font-body text-base leading-relaxed text-white/80">
                         {p.detail}
                       </p>
                       <div className="mt-6 flex items-center gap-3">
-                        <div className="h-px w-6 bg-[#5AACCF]/60" />
-                        <span className="font-body text-xs uppercase tracking-[0.2em] text-[#5AACCF]/70">
+                        <div className="h-px w-6 bg-[#B8935A]/60" />
+                        <span className="font-body text-xs uppercase tracking-[0.2em] text-[#B8935A]/70">
                           {p.category} · {p.location}
                         </span>
                       </div>

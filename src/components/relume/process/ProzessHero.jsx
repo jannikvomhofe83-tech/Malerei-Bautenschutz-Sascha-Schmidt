@@ -43,16 +43,23 @@ export function ProzessHero() {
 
       {/* Background image */}
       <img
-        src="/images/prozess-hero.jpg"
-        alt="Schmid-Bau GmbH – Prozess"
+        src="/images/prozess-hero.png"
+        alt="Malerei & Bautenschutz Sascha Schmidt – Prozess"
         className="prozess-hero-bg absolute inset-0 h-full w-full object-cover object-center"
         style={{ willChange: "transform" }}
       />
-      {/* Overlay */}
+      {/* Dark base overlay for readability */}
       <div
         className="absolute inset-0"
         style={{
-          background: "linear-gradient(to right, rgba(14,42,107,0.82) 0%, rgba(14,42,107,0.60) 40%, rgba(14,42,107,0.25) 75%, rgba(14,42,107,0.05) 100%)",
+          background: "linear-gradient(to right, rgba(13,13,13,0.72) 0%, rgba(13,13,13,0.50) 45%, rgba(13,13,13,0.15) 75%, rgba(13,13,13,0) 100%)",
+        }}
+      />
+      {/* Gold tint overlay */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to right, rgba(184,147,90,0.55) 0%, rgba(184,147,90,0.30) 45%, rgba(184,147,90,0.10) 75%, rgba(184,147,90,0) 100%)",
         }}
       />
 
@@ -62,7 +69,7 @@ export function ProzessHero() {
           <span className="prozess-hero-line h-px w-10 flex-shrink-0 bg-hoser-gold" />
           <div style={{ overflow: "hidden" }}>
             <p className="prozess-hero-eyebrow font-body text-xs font-semibold uppercase tracking-[0.25em] text-white/50">
-              Unser Weg · Von der Idee bis zur Übergabe
+              Unser Weg · Von der Beratung bis zum Ergebnis
             </p>
           </div>
         </div>
@@ -79,8 +86,8 @@ export function ProzessHero() {
         </h1>
 
         <p className="prozess-hero-sub max-w-[400px] font-body text-base leading-relaxed text-white/55 md:text-lg">
-          Fünf klar definierte Schritte. Festpreise, Termintreue und volle
-          Transparenz – von der ersten Beratung bis zur Schlüsselübergabe.
+          Fünf klar definierte Schritte. Persönliche Beratung, Termintreue und
+          höchste Qualität – von der ersten Anfrage bis zur Abnahme.
         </p>
 
         {/* CTA (mobile / tablet — desktop CTA lives next to the scroll indicator) */}
@@ -116,7 +123,7 @@ export function ProzessHero() {
               Prozess entdecken
             </span>
             <span className="mt-1 block font-body text-[0.65rem] uppercase tracking-[0.22em] text-white/40">
-              5 Schritte · 1 Versprechen
+              5 Schritte · Ihre Zufriedenheit
             </span>
           </span>
         </button>
@@ -160,11 +167,11 @@ export function ProzessHero() {
               </svg>
             </span>
             <span className="text-left">
-              <span className="block font-body text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#5AACCF]">
+              <span className="block font-body text-[0.7rem] font-semibold uppercase tracking-[0.32em] text-[#B8935A]">
                 Prozess entdecken
               </span>
               <span className="mt-1 block font-body text-[0.65rem] uppercase tracking-[0.22em] text-white/70">
-                5 Schritte · 1 Versprechen
+                5 Schritte · Ihre Zufriedenheit
               </span>
             </span>
           </button>

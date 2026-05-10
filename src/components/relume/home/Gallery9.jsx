@@ -6,24 +6,24 @@ import { gsap } from "../../../utils/gsap";
 const projects = [
   {
     id: "01",
-    image: "/images/munich-residential.jpg",
-    title: "Wohnanlage München/Trudering",
-    category: "Wohnungsbau · 97 WE + Tiefgarage",
-    year: "2008",
+    image: "/images/projekt-innenraum.png",
+    title: "Innenraumgestaltung, Mühldorf am Inn",
+    category: "Malerei · Farbgestaltung & Streicharbeiten",
+    year: "2023",
   },
   {
     id: "02",
-    image: "/images/wohnpark-haydn.jpg",
-    title: "Wohnpark Haydn, Berglern",
-    category: "Wohnungsbau · 56 WE + Tiefgarage",
-    year: "2015",
+    image: "/images/projekt-sanierung.png",
+    title: "Schimmelsanierung Wohnanlage",
+    category: "Bautenschutz · Schimmelsanierung & Abdichtung",
+    year: "2022",
   },
   {
     id: "03",
-    image: "/images/craftsmen-stone-facade.jpg",
-    title: "Firma Seidenader, Berglern",
-    category: "Industriebau · Produktionshalle + Büro",
-    year: "2007",
+    image: "/images/projekt-fassade.png",
+    title: "Fassadenanstrich Gewerbegebäude",
+    category: "Malerei · Außenanstrich & Bautenschutz",
+    year: "2024",
   },
 ];
 
@@ -151,16 +151,16 @@ export function Gallery9() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#FDFCF8" }}>
+    <section ref={sectionRef} className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#FAFAFA" }}>
       <div className="container">
 
         {/* Heading */}
         <div className="g9-heading-area mb-14 max-w-2xl md:mb-18">
-          <p className="g9-eyebrow mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
+          <p className="g9-eyebrow mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
             Portfolio
           </p>
           <h2
-            className="font-heading font-bold leading-[1.05] tracking-tight text-[#0A1628]"
+            className="font-heading font-bold leading-[1.05] tracking-tight text-[#141414]"
             style={{ fontSize: "clamp(2.4rem, 4.5vw, 4.5rem)" }}
           >
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
@@ -168,7 +168,7 @@ export function Gallery9() {
             </span>
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
               <span className="g9-heading-inner block">
-                <em className="font-serif font-light not-italic text-[#5A6478]">
+                <em className="font-serif font-light not-italic text-[#6B6B6B]">
                   Projekte.
                 </em>
               </span>
@@ -204,7 +204,7 @@ export function Gallery9() {
 
                   {/* Title overlay */}
                   <div className="g9-card-content absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                    <div className="g9-card-line mb-3 h-px w-8 bg-[#0E2A6B]" />
+                    <div className="g9-card-line mb-3 h-px w-8 bg-[#B8935A]" />
                     <h3
                       className="font-heading font-bold leading-tight tracking-tight text-white"
                       style={{ fontSize: "clamp(1.25rem, 2.2vw, 2rem)" }}
@@ -220,7 +220,7 @@ export function Gallery9() {
                 {/* Number panel */}
                 <div className="g9-num-panel flex items-center justify-center">
                   <span
-                    className="font-heading font-bold leading-none tracking-tight text-[#0A1628]/10 select-none"
+                    className="font-heading font-bold leading-none tracking-tight text-[#141414]/10 select-none"
                     style={{ fontSize: "clamp(8rem, 18vw, 18rem)" }}
                     aria-hidden="true"
                   >
@@ -236,16 +236,16 @@ export function Gallery9() {
         <div className="g9-cta-row mt-12 flex flex-wrap items-center gap-6 md:mt-16">
           <a
             href="/projekte"
-            className="g9-cta inline-flex items-center bg-[#0E2A6B] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
+            className="g9-cta inline-flex items-center bg-[#B8935A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
           >
             Alle Projekte ansehen
           </a>
           <a
             href="/projekte"
-            className="g9-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#0A1628]"
+            className="g9-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#6B6B6B] transition-colors duration-200 hover:text-[#141414]"
           >
             Projektübersicht
-            <span className="text-[#0E2A6B]">→</span>
+            <span className="text-[#B8935A]">→</span>
           </a>
         </div>
 

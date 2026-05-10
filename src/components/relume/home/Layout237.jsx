@@ -6,18 +6,21 @@ import { gsap } from "../../../utils/gsap";
 const features = [
   {
     title: "Handwerk als Berufung",
-    body: "Gegründet 1992 als Familienbetrieb. Seit 2007 führt Michael Schmid das väterliche Unternehmen und setzt auf bewährte Werte: Qualität, Verlässlichkeit und persönliche Betreuung auf jedem Bauprojekt.",
-    image: "/images/craftsmen-stone-facade.jpg",
+    body: "Seit 20 Jahren im Bauhandwerk als Maler und Lackierer tätig. Sascha Schmidt steht für Qualität, Verlässlichkeit und persönliche Betreuung – von der ersten Beratung bis zur finalen Ausführung.",
+    image: "/images/craftsmen-painting.png",
+    position: "center 10%",
   },
   {
-    title: "Persönlichkeit & Beständigkeit",
-    body: "Klare Angebote, direkte Kommunikation, ein Ansprechpartner. Mit unserem zehnköpfigen Team betreuen wir jedes Projekt von der Planung bis zur Schlüsselübergabe – zuverlässig und termintreu.",
-    image: "/images/team-blueprints.jpg",
+    title: "Qualität & Verlässlichkeit",
+    body: "Klare Angebote, direkte Kommunikation, ein Ansprechpartner. Wir setzen ausschließlich Produkte renommierter Hersteller in Profiqualität ein – ästhetisch ansprechend und langfristig schützend.",
+    image: "/images/handshake-quality.png",
+    position: "center center",
   },
   {
     title: "Verwurzelt in der Region",
-    body: "Berglern ist unsere Heimat. Seit 1992 bauen wir in der Region Erding und weit darüber hinaus. Seit 2015 finden Sie uns in einer ehemaligen Schnapsbrennerei – ein Ort mit Charakter, wie unsere Arbeit.",
-    image: "/images/munich-residential.jpg",
+    body: "Mühldorf am Inn ist unsere Heimat. Wir sind Ihr kompetenter Partner für professionelle Maler- und Bautenschutzarbeiten in Mühldorf am Inn und Umgebung – mit höchster Kundenzufriedenheit.",
+    image: "/images/region-bavaria.png",
+    position: "center center",
   },
 ];
 
@@ -124,16 +127,16 @@ export function Layout237() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#FDFCF8" }}>
+    <section ref={sectionRef} className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#FAFAFA" }}>
       <div className="container">
 
         {/* Heading */}
         <div className="l237-heading-area mb-14 max-w-2xl md:mb-18">
-          <p className="l237-eyebrow mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
+          <p className="l237-eyebrow mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
             Unsere Philosophie
           </p>
           <h2
-            className="font-heading font-bold leading-[1.05] tracking-tight text-[#0A1628]"
+            className="font-heading font-bold leading-[1.05] tracking-tight text-[#141414]"
             style={{ fontSize: "clamp(2.4rem, 4.5vw, 4.5rem)" }}
           >
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
@@ -141,8 +144,8 @@ export function Layout237() {
             </span>
             <span className="block" style={{ overflow: "hidden", paddingBottom: "0.08em" }}>
               <span className="l237-heading-inner block">
-                <em className="font-serif font-light not-italic text-[#5A6478]">
-                  Wie wir bauen.
+                <em className="font-serif font-light not-italic text-[#6B6B6B]">
+                  Wie wir arbeiten.
                 </em>
               </span>
             </span>
@@ -165,7 +168,7 @@ export function Layout237() {
                   src={f.image}
                   alt={f.title}
                   className="l237-card-img absolute inset-0 h-full w-full object-cover transition-transform duration-[1.2s] ease-out group-hover:scale-[1.03]"
-                  style={{ willChange: "transform" }}
+                  style={{ willChange: "transform", objectPosition: f.position || "center center" }}
                 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-black/10" />
@@ -191,7 +194,7 @@ export function Layout237() {
                 <div
                   className={`l237-card-content absolute bottom-0 ${isEven ? "left-0" : "right-0"} p-8 md:p-12 max-w-xl`}
                 >
-                  <div className="l237-card-line mb-4 h-px w-8 bg-[#0E2A6B]" />
+                  <div className="l237-card-line mb-4 h-px w-8 bg-[#B8935A]" />
                   <h3
                     className="mb-3 font-heading font-bold leading-tight tracking-tight text-white"
                     style={{ fontSize: "clamp(1.5rem, 2.8vw, 2.4rem)" }}
@@ -211,16 +214,16 @@ export function Layout237() {
         <div className="l237-cta-row mt-12 flex flex-wrap items-center gap-6 md:mt-16">
           <a
             href="/leistungen"
-            className="l237-cta inline-flex items-center bg-[#0E2A6B] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
+            className="l237-cta inline-flex items-center bg-[#B8935A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-white transition-opacity duration-200 hover:opacity-85"
           >
             Leistungen entdecken
           </a>
           <a
             href="/ueber-uns"
-            className="l237-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#5A6478] transition-colors duration-200 hover:text-[#0A1628]"
+            className="l237-cta inline-flex items-center gap-3 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#6B6B6B] transition-colors duration-200 hover:text-[#141414]"
           >
-            Unsere Geschichte
-            <span className="text-[#0E2A6B]">→</span>
+            Über uns
+            <span className="text-[#B8935A]">→</span>
           </a>
         </div>
 

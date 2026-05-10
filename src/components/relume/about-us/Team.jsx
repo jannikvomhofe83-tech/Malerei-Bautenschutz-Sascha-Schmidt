@@ -4,16 +4,11 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "../../../utils/gsap";
 
 const team = [
-  { name: "Michael Schmid",     role: "Geschäftsführer",            img: "/images/michael-schmid.png" },
-  { name: "Maurermeister",      role: "Hochbau & Rohbau",           img: "/images/team/mason.jpg" },
-  { name: "Polier",             role: "Bauleitung",                 img: "/images/team/polier.jpg" },
-  { name: "Kranführer",         role: "Ladekran & Transport",       img: "/images/team/crane_op.jpg" },
-  { name: "Tiefbauer",          role: "Tiefbau & Erdarbeiten",      img: "/images/team/kanal.jpg" },
-  { name: "Gerüstbauer",        role: "Gerüstbau",                  img: "/images/team/site_manager.jpg" },
-  { name: "Fahrer",             role: "Schüttgut & Transporte",     img: "/images/team/excavator.jpg" },
-  { name: "Baustoffhandel",     role: "Lager & Beratung",           img: "/images/team/concrete.jpg" },
-  { name: "Baufachkraft",       role: "Sanierung & Renovierung",    img: "/images/team/apprentice.jpg" },
-  { name: "Büro",               role: "Administration",             img: "/images/team/office_woman1.jpg" },
+  { name: "Sascha Schmidt", role: "Inhaber & Meister" },
+  { name: "Maler-Geselle",  role: "Innen & Außenanstrich" },
+  { name: "Maler-Geselle",  role: "Airless & Spachtelarbeiten" },
+  { name: "Fachkraft",      role: "Bautenschutz & Schimmelsanierung" },
+  { name: "Auszubildender", role: "Maler & Lackierer" },
 ];
 
 const splitWords = (el, text) => {
@@ -62,30 +57,24 @@ export function Team() {
         .to(headingWords, { yPercent: 0, duration: 1.0, ease: "expo.out", stagger: 0.07 }, "-=0.35")
         .to(subRef.current, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, "-=0.5");
 
-      // Per-card cinematic entrance
+      // Per-card entrance
       cardsRef.current.filter(Boolean).forEach((card, idx) => {
         const photo = card.querySelector("[data-team-photo]");
-        const img   = card.querySelector("img");
         const name  = card.querySelector("[data-team-name]");
         const role  = card.querySelector("[data-team-role]");
-
-        gsap.set(photo, { clipPath: "inset(100% 0 0 0)" });
-        gsap.set(img,   { scale: 1.18 });
-        gsap.set([name, role], { y: 14, opacity: 0 });
 
         gsap.timeline({
           scrollTrigger: {
             trigger: card,
-            start: "top 92%",
-            toggleActions: "play none none reverse",
+            start: "top 95%",
+            once: true,
           },
-          delay: (idx % 5) * 0.06 + Math.floor(idx / 5) * 0.04,
+          delay: idx * 0.08,
           defaults: { force3D: true },
         })
-          .to(photo, { clipPath: "inset(0% 0 0 0)", duration: 0.9, ease: "expo.inOut" })
-          .to(img,   { scale: 1, duration: 1.1, ease: "power3.out" }, "-=0.7")
-          .to(name,  { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, "-=0.5")
-          .to(role,  { y: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, "-=0.35");
+          .from(photo, { y: 24, opacity: 0, duration: 0.7, ease: "power3.out" })
+          .from(name,  { y: 14, opacity: 0, duration: 0.5, ease: "power3.out" }, "-=0.4")
+          .from(role,  { y: 14, opacity: 0, duration: 0.45, ease: "power3.out" }, "-=0.35");
       });
     }, sectionRef);
 
@@ -93,52 +82,62 @@ export function Team() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#FDFCF8" }}>
+    <section ref={sectionRef} className="px-[5%] py-16 md:py-24 lg:py-28" style={{ backgroundColor: "#FAFAFA" }}>
       <div className="container">
 
         {/* Heading */}
         <div className="mb-14 md:mb-18">
-          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
-            Menschen bei Schmid-Bau
+          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
+            Menschen bei Schmidt Maler
           </p>
           <h2
             ref={headingRef}
-            className="font-heading font-bold leading-tight tracking-tight text-[#0A1628]"
+            className="font-heading font-bold leading-tight tracking-tight text-[#141414]"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
             Unser Team
           </h2>
-          <p ref={subRef} className="mt-4 max-w-xl font-body text-base text-[#0A1628]/60">
-            Zehnköpfiges Team mit breitem Leistungsspektrum – von Hochbau bis Transporte.
+          <p ref={subRef} className="mt-4 max-w-xl font-body text-base text-[#141414]/60">
+            Eigenes, ausgebildetes Fachpersonal – kein Rückgriff auf Fremdunternehmen.
           </p>
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5">
           {team.map((member, idx) => (
             <div
-              key={member.name}
+              key={`${member.name}-${idx}`}
               ref={(el) => (cardsRef.current[idx] = el)}
               className="group flex flex-col items-center text-center"
             >
-              {/* Photo */}
-              <div data-team-photo className="relative mb-4 overflow-hidden w-full aspect-square rounded-2xl">
-                <img
-                  src={member.img}
-                  alt={member.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+              {/* Placeholder */}
+              <div
+                data-team-photo
+                className="relative mb-4 w-full aspect-square rounded-2xl flex flex-col items-center justify-center gap-3 transition-colors duration-300 group-hover:border-[#B8935A]/40"
+                style={{ backgroundColor: "#1C1C1C", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                <div style={{
+                  width: 56, height: 56, borderRadius: "50%",
+                  border: "2px dashed rgba(184,147,90,0.35)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(184,147,90,0.45)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                  </svg>
+                </div>
+                <span style={{ fontFamily: "Syne, sans-serif", fontSize: "0.55rem", letterSpacing: "0.28em", textTransform: "uppercase", color: "rgba(184,147,90,0.35)" }}>
+                  Foto folgt
+                </span>
                 {/* Gold bottom line on hover */}
-                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#0E2A6B] transition-all duration-500 group-hover:w-full" />
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-500 group-hover:w-full" style={{ backgroundColor: "#B8935A" }} />
               </div>
 
               {/* Info */}
-              <h3 data-team-name className="font-heading text-sm font-bold text-[#0A1628] md:text-base">
+              <h3 data-team-name className="font-heading text-sm font-bold text-[#141414] md:text-base">
                 {member.name}
               </h3>
-              <p data-team-role className="mt-1 font-body text-xs text-[#0E2A6B]/80">
+              <p data-team-role className="mt-1 font-body text-xs" style={{ color: "rgba(184,147,90,0.8)" }}>
                 {member.role}
               </p>
             </div>

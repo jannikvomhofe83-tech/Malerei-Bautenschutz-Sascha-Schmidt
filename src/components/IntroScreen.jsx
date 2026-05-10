@@ -2,22 +2,38 @@
 import { useEffect, useState } from "react";
 import { motion, LayoutGroup } from "framer-motion";
 
-const TEXT = "Schmid-Bau GmbH";
+const TEXT = "Malerei & Bautenschutz Sascha Schmidt";
 const CHARS = TEXT.split("");
 
 const FONT = {
   fontFamily: "Syne, sans-serif",
   fontWeight: 700,
-  fontSize: "clamp(1.5rem, 3.2vw, 3.8rem)",
+  fontSize: "clamp(1.1rem, 2.4vw, 2.8rem)",
   color: "#FFFFFF",
   letterSpacing: "0.06em",
   whiteSpace: "pre",
   display: "inline-block",
 };
 
-const HOUSE_SIZE = { width: "clamp(26px, 3vw, 44px)", height: "clamp(26px, 3vw, 44px)" };
-const HOUSE_PATH = "M6 20L24 6L42 20V42H30V30H18V42H6V20Z";
 const EASE = [0.76, 0, 0.24, 1];
+
+// Same S mark as used in the Navbar
+function SMark() {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
+      <span style={{
+        fontFamily: "Syne, sans-serif",
+        fontWeight: 800,
+        fontSize: "clamp(2rem, 4vw, 3.5rem)",
+        color: "#B8935A",
+        lineHeight: 0.85,
+        letterSpacing: "-0.02em",
+        display: "block",
+      }}>S</span>
+      <div style={{ width: "100%", height: "2.5px", backgroundColor: "#B8935A", marginTop: "5px" }} />
+    </div>
+  );
+}
 
 export default function IntroScreen({ onComplete }) {
   const [revealed, setRevealed] = useState(false);
@@ -32,7 +48,7 @@ export default function IntroScreen({ onComplete }) {
     <motion.div
       style={{
         position: "fixed", inset: 0, zIndex: 100,
-        background: "#040D1C",
+        background: "#141414",
         display: "flex", alignItems: "center", justifyContent: "center",
       }}
       initial={{ opacity: 1 }}
@@ -43,57 +59,41 @@ export default function IntroScreen({ onComplete }) {
     >
       <LayoutGroup>
 
-        {/* ── Phase 1: House alone, centred, draws itself ── */}
+        {/* ── Phase 1: S mark fades+rises into center ── */}
         {!revealed && (
-          <motion.div layoutId="house">
-            <svg viewBox="0 0 48 48" fill="none" style={{ display: "block", ...HOUSE_SIZE }}>
-              <motion.path
-                d={HOUSE_PATH}
-                stroke="#FFFFFF" strokeWidth="2.5"
-                strokeLinejoin="round" strokeLinecap="round" fill="none"
-                initial={{ pathLength: 0, opacity: 0 }}
-                animate={{ pathLength: 1, opacity: 1 }}
-                transition={{
-                  pathLength: { duration: 0.85, ease: EASE },
-                  opacity: { duration: 0.1 },
-                }}
-              />
-            </svg>
+          <motion.div
+            layoutId="s-mark"
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: EASE }}
+          >
+            <SMark />
           </motion.div>
         )}
 
-        {/* ── Phase 2: House slides left (layoutId), text staggered in ── */}
+        {/* ── Phase 2: S slides left (layoutId), text staggered in ── */}
         {revealed && (
-          <div style={{ display: "flex", alignItems: "center", gap: "clamp(10px, 1.4vw, 22px)" }}>
-
-            {/* Same layoutId → Framer Motion animates house from centre to here */}
+          <div style={{ display: "flex", alignItems: "center", gap: "clamp(14px, 2vw, 28px)" }}>
             <motion.div
-              layoutId="house"
+              layoutId="s-mark"
               transition={{ duration: 1.05, ease: EASE }}
             >
-              <svg viewBox="0 0 48 48" fill="none" style={{ display: "block", ...HOUSE_SIZE }}>
-                <path
-                  d={HOUSE_PATH}
-                  stroke="#FFFFFF" strokeWidth="2.5"
-                  strokeLinejoin="round" strokeLinecap="round" fill="none"
-                />
-              </svg>
+              <SMark />
             </motion.div>
 
-            {/* Text characters stagger in */}
             <div style={{ overflow: "hidden" }}>
               <motion.div
                 style={{ display: "flex" }}
                 initial="hidden"
                 animate="visible"
-                variants={{ visible: { transition: { staggerChildren: 0.055, delayChildren: 0.9 } } }}
+                variants={{ visible: { transition: { staggerChildren: 0.05, delayChildren: 0.85 } } }}
               >
                 {CHARS.map((char, i) => (
                   <motion.span
                     key={i}
                     variants={{
                       hidden: { y: "110%", opacity: 0 },
-                      visible: { y: 0, opacity: 1, transition: { duration: 0.55, ease: EASE } },
+                      visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: EASE } },
                     }}
                     style={FONT}
                   >
@@ -102,7 +102,6 @@ export default function IntroScreen({ onComplete }) {
                 ))}
               </motion.div>
             </div>
-
           </div>
         )}
 

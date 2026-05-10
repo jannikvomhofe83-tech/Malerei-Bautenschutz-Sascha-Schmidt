@@ -6,22 +6,22 @@ import { gsap } from "../../../utils/gsap";
 
 const testimonials = [
   {
-    quote: "Jedes Detail wurde sorgfältig umgesetzt, ohne Abstriche – und das Haus war pünktlich fertig, genau wie versprochen.",
-    name: "Klaus Müller",
-    role: "Bauherr, München",
-    img: "/images/hero-aerial-construction.jpg",
+    quote: "Sascha hat von uns den Auftrag erhalten, unser Haus (230 qm Wohnfläche) innen weiß zu streichen. Schon der erste Kontakt war herzlich und professionell.",
+    name: "Dirk R.",
+    role: "Google-Rezension · 5/5",
+    initials: "DR",
   },
   {
-    quote: "Wir waren skeptisch wegen der Sanierungskosten – aber die Festpreisgarantie hat uns vom ersten Tag an Sicherheit gegeben.",
-    name: "Maria Hoffmann",
-    role: "Eigentümerin, Augsburg",
-    img: "/images/craftsmen-stone-facade.jpg",
+    quote: "Wir haben Sascha beauftragt, unsere Wohnung für eine Übergabe zu streichen und zu reinigen.",
+    name: "Tobias F.",
+    role: "Google-Rezension · 5/5",
+    initials: "TF",
   },
   {
-    quote: "Regionales Know-how, professionelle Ausführung und ein Team, das wirklich zuhört.",
-    name: "Thomas Weber",
-    role: "Bauherr, Ingolstadt",
-    img: "/images/villa-twilight.jpg",
+    quote: "Klare Weiterempfehlung! Freundlicher Kontakt, kurzfristige Besichtigung und dann zeitnahe Ausführung. Jederzeit wieder 👍",
+    name: "Google-Kunde",
+    role: "Google-Rezension · 5/5",
+    initials: "★",
   },
 ];
 
@@ -123,7 +123,7 @@ export function Testimonial6() {
 
         {/* Heading */}
         <div className="mb-14 md:mb-18">
-          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
             Kundenstimmen
           </p>
           <h2
@@ -141,20 +141,20 @@ export function Testimonial6() {
             <div
               key={t.name}
               ref={(el) => (cardsRef.current[idx] = el)}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 p-8 backdrop-blur-md transition-all duration-500 hover:border-[#5AACCF]/40"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/10 p-8 backdrop-blur-md transition-all duration-500 hover:border-[#B8935A]/40"
               style={{ background: "rgba(255,255,255,0.05)" }}
             >
               {/* Decorative quote mark */}
               <span
                 data-quote-mark
-                className="absolute right-6 top-4 font-heading font-bold leading-none text-[#5AACCF]/10 transition-all duration-500 group-hover:text-[#5AACCF]/20"
+                className="absolute right-6 top-4 font-heading font-bold leading-none text-[#B8935A]/10 transition-all duration-500 group-hover:text-[#B8935A]/20"
                 style={{ fontSize: "8rem" }}
               >
                 "
               </span>
 
               {/* Stars */}
-              <div className="mb-6 flex gap-1 text-[#5AACCF]">
+              <div className="mb-6 flex gap-1 text-[#B8935A]">
                 {[...Array(5)].map((_, i) => (
                   <BiSolidStar key={i} data-star className="size-4" />
                 ))}
@@ -170,11 +170,12 @@ export function Testimonial6() {
 
               {/* Author */}
               <div data-card-author className="flex items-center gap-4">
-                <img
-                  src={t.img}
-                  alt={t.name}
-                  className="size-12 rounded-full object-cover ring-2 ring-[#5AACCF]/30"
-                />
+                <div
+                  className="flex size-12 shrink-0 items-center justify-center rounded-full font-heading text-sm font-bold text-white ring-2 ring-[#B8935A]/30"
+                  style={{ backgroundColor: "#B8935A" }}
+                >
+                  {t.initials}
+                </div>
                 <div>
                   <p className="font-body text-sm font-semibold text-white">{t.name}</p>
                   <p className="font-body text-xs text-white/50">{t.role}</p>
@@ -182,7 +183,7 @@ export function Testimonial6() {
               </div>
 
               {/* Bottom gold accent */}
-              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#5AACCF] transition-all duration-500 group-hover:w-full" />
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-[#B8935A] transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>

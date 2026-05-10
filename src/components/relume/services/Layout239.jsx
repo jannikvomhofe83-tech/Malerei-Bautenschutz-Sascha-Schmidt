@@ -5,46 +5,46 @@ import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 const services = [
   {
-    image: "/images/service-schluessel.jpg",
+    image: "/images/craftsmen-painting.png",
     num: "01",
-    title: "Schlüsselfertiges Bauen",
-    body: "Ihr Traumhaus wird Wirklichkeit – von der Planung bis zur Schlüsselübergabe. Einfamilien- und Mehrfamilienhäuser aus einer Hand.",
-    tags: ["Einfamilienhaus", "Mehrfamilienhaus", "Schlüsselfertig"],
+    title: "Malerei & Farbgestaltung",
+    body: "Streicharbeiten aller Art, Airless-Spritzverfahren und individuelle Farbkonzepte – im Innen- und Außenbereich. Wir gestalten mit Ihren Ideen und unserer Leidenschaft.",
+    tags: ["Streicharbeiten", "Airless", "Farbberatung"],
   },
   {
-    image: "/images/craftsmen-stone-facade.jpg",
+    image: "/images/service-bautenschutz.png",
     num: "02",
-    title: "Rohbau & Renovierung",
-    body: "Solider Rohbau als Basis für alle Folgegewerke. Fachgerechte Sanierung und Renovierung steigert Wert und Wohnqualität.",
-    tags: ["Rohbau", "Sanierung", "Renovierung"],
+    title: "Bautenschutz & Schimmelsanierung",
+    body: "Nasse Wände, Schimmel oder Risse im Mauerwerk? Wir treffen fachgerechte Maßnahmen zum Schutz Ihres Gebäudes – innen wie außen.",
+    tags: ["Schimmelsanierung", "Bautenschutz", "Feuchtigkeitsschutz"],
   },
   {
-    image: "/images/team-blueprints.jpg",
+    image: "/images/service-spachtel.png",
     num: "03",
-    title: "Planung & Beratung",
-    body: "Zeitlose, durchdachte Architektur mit Experten aus unserem Netzwerk. Budgets, Vorschriften und Flächen clever genutzt.",
-    tags: ["Planung", "Architektur", "Beratung"],
+    title: "Spachtel- & Putzarbeiten",
+    body: "Holzschutz, Spachtelarbeiten in allen Qualitätsstufen (Q1–Q4), Verputzen innen und außen – für perfekte Oberflächen als Grundlage jeder Beschichtung.",
+    tags: ["Spachtel Q1–Q4", "Holzschutz", "Verputzen"],
   },
   {
-    image: "/images/service-tiefbau.jpg",
+    image: "/images/service-boden.png",
     num: "04",
-    title: "Tiefbau & Landw. Hallen",
-    body: "Kompetenter Tiefbau an und unter der Geländelinie. Maßgeschneiderte landwirtschaftliche Hallen für Lager, Tierhaltung und mehr.",
-    tags: ["Tiefbau", "Landw. Hallen", "Infrastruktur"],
+    title: "Bodenverlegung & Parkett",
+    body: "Professionelle Bodenverlegung und Parkettschleifen für hochwertige Ergebnisse. Wir bringen Ihren Boden zum Strahlen – langlebig und optisch ansprechend.",
+    tags: ["Bodenverlegung", "Parkettschleifen", "Versiegelung"],
   },
   {
-    image: "/images/service-geruest.jpg",
+    image: "/images/service-beton.png",
     num: "05",
-    title: "Transporte, Gerüst & Kran",
-    body: "Zuverlässiger Schüttgut- und Baumaterialtransport. Gerüstbau für sichere Arbeiten. Ladekranarbeiten für präzises Heben.",
-    tags: ["Transporte", "Gerüstbau", "Ladekran"],
+    title: "Betonsanierung & Beschichtungen",
+    body: "Hochwertige Betonsanierung und Beschichtungen für dauerhaften Schutz. Wir setzen ausschließlich Produkte renommierter Hersteller in Profiqualität ein.",
+    tags: ["Betonsanierung", "Beschichtungen", "Profiqualität"],
   },
   {
-    image: "/images/service-baustoff.jpg",
+    image: "/images/service-renovierung.png",
     num: "06",
-    title: "Baustoffhandel",
-    body: "Breites Sortiment für Profis und Heimwerker – offen, ehrlich beraten und in der Praxis bewährt. Ankauf von Grundstücken.",
-    tags: ["Baustoffhandel", "Beratung", "Grundstücksankauf"],
+    title: "Renovierung & Sanierung",
+    body: "Renovierungsarbeiten bei Einzug und Auszug oder eine komplette Sanierung – für uns kein Problem. Tapezieren, Lackieren und sämtliche Instandsetzungsarbeiten.",
+    tags: ["Renovierung", "Tapezieren", "Lackieren"],
   },
 ];
 
@@ -221,7 +221,7 @@ export function Layout239() {
     <section
       ref={sectionRef}
       className="px-[5%] pt-24 pb-16 md:pt-32 md:pb-24 lg:pt-36 lg:pb-28"
-      style={{ backgroundColor: "#FDFCF8" }}
+      style={{ backgroundColor: "#FAFAFA" }}
     >
       <div className="container">
 
@@ -229,17 +229,17 @@ export function Layout239() {
         <div className="mb-12 md:mb-16">
           <p
             ref={eyebrowRef}
-            className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]"
+            className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]"
             style={{ willChange: "transform, opacity" }}
           >
             Unsere Leistungen auf einen Blick
           </p>
           <h2
             ref={headingRef}
-            className="font-heading font-bold leading-tight tracking-tight text-[#0A1628] whitespace-nowrap"
+            className="font-heading font-bold leading-tight tracking-tight text-[#141414] whitespace-nowrap"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)", willChange: "transform, opacity" }}
           >
-            Gewerke. Ein Ansprechpartner.
+            Malerei & Bautenschutz. Ein Ansprechpartner.
           </h2>
         </div>
 
@@ -255,14 +255,14 @@ export function Layout239() {
               ref={(el) => (cardsRef.current[i] = el)}
               className="group relative overflow-hidden rounded-2xl cursor-pointer"
               style={{
-                backgroundColor: "#060D1F",
+                backgroundColor: "#1C1C1C",
                 willChange: "transform, opacity",
                 backfaceVisibility: "hidden",
                 transition: "transform 0.35s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.35s ease",
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = "translateY(-6px) scale(1.01)";
-                e.currentTarget.style.boxShadow = "0 20px 40px -12px rgba(14,42,107,0.35)";
+                e.currentTarget.style.boxShadow = "0 20px 40px -12px rgba(184,147,90,0.35)";
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = "";
@@ -282,7 +282,7 @@ export function Layout239() {
                 />
                 <div
                   data-card-overlay
-                  className="absolute inset-0 bg-gradient-to-t from-[#060D1F] via-[#060D1F]/40 to-transparent"
+                  className="absolute inset-0 bg-gradient-to-t from-[#1C1C1C] via-[#1C1C1C]/40 to-transparent"
                 />
 
                 {/* Number top-left */}
@@ -341,17 +341,17 @@ export function Layout239() {
         <div ref={ctaWrapRef} className="mt-10 flex flex-wrap items-center gap-6 md:mt-14">
           <a
             href="/kontakt"
-            className="inline-flex items-center gap-2 border border-[#0E2A6B]/30 px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#0E2A6B] transition-all duration-300 hover:bg-[#0E2A6B] hover:text-white hover:border-[#0E2A6B]"
+            className="inline-flex items-center gap-2 border border-[#B8935A]/30 px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.1em] text-[#B8935A] transition-all duration-300 hover:bg-[#B8935A] hover:text-white hover:border-[#B8935A]"
           >
             Termin vereinbaren
             <span>→</span>
           </a>
           <a
             href="/kontakt"
-            className="inline-flex items-center gap-2 font-body text-sm font-semibold uppercase tracking-[0.12em] text-[#5A6478] transition-colors duration-200 hover:text-[#0E2A6B]"
+            className="inline-flex items-center gap-2 font-body text-sm font-semibold uppercase tracking-[0.12em] text-[#6B6B6B] transition-colors duration-200 hover:text-[#B8935A]"
           >
             Projekt anfragen
-            <span className="text-[#0E2A6B]">→</span>
+            <span className="text-[#B8935A]">→</span>
           </a>
         </div>
 

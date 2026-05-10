@@ -23,57 +23,57 @@ const splitWords = (el, text) => {
 
 const jobs = [
   {
-    title: "Maurer (m/w/d)",
+    title: "Maler & Lackierer (m/w/d)",
     type: "Vollzeit",
-    location: "Berglern · Region Erding",
-    desc: "Erstellung von Wänden, Mauern und Decken im Hochbau. Mitwirken bei Wohn- und Geschäftshäusern, Hallen, Ställen, Kellern und Bodenplatten.",
+    location: "Mühldorf am Inn und Umgebung",
+    desc: "Innen- und Außenanstriche, Spachtelarbeiten und Farbgestaltung. Du arbeitest mit modernen Airless-Systemen und hochwertigen Materialien.",
     anforderungen: [
-      "Abgeschlossene Ausbildung als Maurer",
-      "Erfahrung in Schalungsarbeiten, Betonieren und Verputzen",
-      "Teamfähigkeit und Zuverlässigkeit",
+      "Abgeschlossene Ausbildung als Maler & Lackierer",
+      "Erfahrung in Spachtelarbeiten und Farbgestaltung",
+      "Teamfähigkeit, Sorgfalt und Zuverlässigkeit",
       "Führerschein Klasse B von Vorteil",
     ],
     bieten: [
-      "Überdurchschnittliche Bezahlung",
-      "Arbeitskleidung & Sozialleistungen",
-      "Junges, motiviertes Team mit Spaß an der Arbeit",
-      "Volle Auftragsbücher – keine Angst vor Kurzarbeit",
+      "Übertarifliche, pünktliche Bezahlung",
+      "Hochwertige Arbeitskleidung & Ausrüstung",
+      "Familiäres Team mit flachen Hierarchien",
+      "Volle Auftragsbücher – sicherer Arbeitsplatz",
     ],
   },
   {
-    title: "Kranfahrer (m/w/d)",
+    title: "Bautenschutz-Fachkraft (m/w/d)",
     type: "Vollzeit",
-    location: "Berglern · Region Erding",
-    desc: "Sichere und präzise Steuerung unserer Krane sowie Unterstützung des Teams bei Hebe- und Transportarbeiten auf unseren Baustellen.",
+    location: "Mühldorf am Inn und Umgebung",
+    desc: "Schimmelsanierung, Feuchtigkeitsschutz und Betonsanierung. Du erkennst Schäden, findest Ursachen und setzt fachgerechte Maßnahmen um.",
     anforderungen: [
-      "Kranführerschein (und idealerweise Erfahrung am Haken)",
-      "Verantwortungsbewusstsein und Teamgeist",
-      "Lust, mit moderner Technik zu arbeiten",
-      "Zuverlässigkeit und Sorgfalt",
+      "Erfahrung im Bereich Bautenschutz oder Sanierung",
+      "Kenntnisse in Schimmelsanierung und Abdichtung",
+      "Selbstständige, sorgfältige Arbeitsweise",
+      "Führerschein Klasse B",
     ],
     bieten: [
-      "Sicherer Arbeitsplatz in einem starken Team",
-      "Faire Bezahlung",
-      "Moderne Maschinen & Ausstattung",
       "Abwechslungsreiche Projekte in der Region",
+      "Moderne Maschinen und Profi-Materialien",
+      "Weiterbildungsmöglichkeiten im Bautenschutz",
+      "Direkter Ansprechpartner – kein Konzernapparat",
     ],
   },
   {
-    title: "Bauhelfer (m/w/d)",
-    type: "Vollzeit",
-    location: "Berglern · Region Erding",
-    desc: "Unterstützen bei verschiedenen Bauarbeiten und Auf-/Abbauarbeiten. Du packst gern mit an und willst Teil eines starken Teams sein.",
+    title: "Auszubildender Maler & Lackierer (m/w/d)",
+    type: "Ausbildung",
+    location: "Mühldorf am Inn und Umgebung",
+    desc: "Starte deine Ausbildung in einem echten Handwerksbetrieb. Du lernst von Grund auf – von der Farbmischung bis zur Airless-Technik und Schimmelsanierung.",
     anforderungen: [
-      "Handwerkliches Geschick & Lust auf körperliche Arbeit",
-      "Zuverlässigkeit und Teamgeist",
-      "Erfahrung auf dem Bau? Super – aber kein Muss",
-      "Führerschein Klasse B wäre von Vorteil",
+      "Hauptschulabschluss oder höher",
+      "Interesse an Farbe, Gestaltung und Handwerk",
+      "Zuverlässigkeit und Lernbereitschaft",
+      "Freude an praktischer Arbeit",
     ],
     bieten: [
-      "Sicherer Job in einem motivierten Team",
-      "Faire Bezahlung",
-      "Abwechslungsreiche Aufgaben auf spannenden Projekten",
-      "Direkte Zusammenarbeit mit erfahrenen Kollegen",
+      "Persönliche Betreuung durch Meister Sascha Schmidt",
+      "Faire Ausbildungsvergütung",
+      "Übernahme nach erfolgreichem Abschluss möglich",
+      "Moderne Werkzeuge und Ausrüstung von Anfang an",
     ],
   },
 ];
@@ -146,13 +146,13 @@ export function Karriere() {
       ref={sectionRef}
       id="stellenangebote"
       className="overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0E2A6B 0%, #07194A 100%)" }}
+      style={{ background: "linear-gradient(180deg, #B8935A 0%, #0D0D0D 100%)" }}
     >
       {/* Heading with image background */}
       <div
         className="relative px-[5%] py-16 md:py-24 lg:py-28"
         style={{
-          backgroundImage: "url('/images/karriere-team-vogelperspektive.jpg')",
+          backgroundImage: "url('/images/karriere-offene-stellen.png')",
           backgroundSize: "cover",
           backgroundPosition: "center 40%",
         }}
@@ -160,7 +160,7 @@ export function Karriere() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(14,42,107,0.55) 0%, rgba(14,42,107,0.30) 40%, rgba(14,42,107,0.78) 75%, rgba(7,25,74,1) 100%)",
+            background: "linear-gradient(to bottom, rgba(184,147,90,0.55) 0%, rgba(184,147,90,0.30) 40%, rgba(184,147,90,0.78) 75%, rgba(13,13,13,1) 100%)",
           }}
         />
         <div className="container relative z-10">
@@ -179,8 +179,8 @@ export function Karriere() {
             </div>
             <div>
               <p ref={subRef} className="font-body text-base leading-relaxed text-white/65">
-                Wir suchen laufend qualifizierte Fachkräfte, Vorarbeiter und Poliere.
-                Alle Stellen sind unbefristet und mit sofortigem Einstieg möglich.
+                Wir suchen laufend Maler-Gesellen, Bautenschutz-Fachkräfte und Auszubildende.
+                Alle Stellen mit sofortigem Einstieg und fairer Bezahlung.
               </p>
             </div>
           </div>
@@ -289,9 +289,10 @@ export function Karriere() {
                         </div>
                       </div>
                       <a
-                        href="mailto:schmid-bau@gmx.net"
+                        href="mailto:info@malerei-schmidt.de"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-2 bg-white px-5 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.12em] text-hoser-gold transition-opacity hover:opacity-90"
+                        className="inline-flex items-center gap-2 bg-white px-5 py-2.5 font-body text-xs font-semibold uppercase tracking-[0.12em] transition-opacity hover:opacity-90"
+                        style={{ color: "#B8935A" }}
                       >
                         Jetzt bewerben →
                       </a>
@@ -316,16 +317,16 @@ export function Karriere() {
               <p className="mt-3 font-body text-sm text-white/50 leading-relaxed">
                 Wir freuen uns jederzeit über Initiativbewerbungen qualifizierter Handwerker.
                 Schriftlich an:<br />
-                <span className="text-white/70">Schmid-Bau GmbH · Kreuzstraße 19 · 85459 Berglern</span>
+                <span className="text-white/70">Malerei & Bautenschutz Sascha Schmidt · Kreuzstraße 19 · 85459 Mühldorf am Inn</span>
               </p>
             </div>
             <div className="flex flex-col gap-3">
               <a
-                href="mailto:schmid-bau@gmx.net"
+                href="mailto:info@malerei-schmidt.de"
                 className="inline-flex items-center gap-3 border border-white/15 px-6 py-4 font-body text-sm text-white transition-all duration-200 hover:border-white hover:bg-white/5"
               >
                 <span className="text-white text-base">✉</span>
-                schmid-bau@gmx.net
+                info@malerei-schmidt.de
               </a>
               <a
                 href="tel:+491707795316"

@@ -5,16 +5,16 @@ import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
 const michael = {
   num: "01",
-  name: "Michael Schmid",
-  title: "Geschäftsführer",
-  role: "Inhaber",
+  name: "Sascha Schmidt",
+  title: "Inhaber",
+  role: "Meister",
   image: "/images/michael-schmid.png",
-  email: "schmid-bau@gmx.net",
-  bio: "2007 übernahm Michael Schmid das väterliche Unternehmen und führt es seitdem mit Persönlichkeit und Beständigkeit weiter. Mit einem zehnköpfigen Team realisiert er Projekte von der Planung bis zur Schlüsselübergabe – in der Region Erding und weit darüber hinaus.",
+  email: "info@malerei-schmidt.de",
+  bio: "Seit 20 Jahren ist Sascha Schmidt als Maler und Lackierer im Bauhandwerk tätig. Er führt jeden Auftrag mit Leidenschaft, Präzision und persönlichem Einsatz durch – von der Farbberatung bis zur fachgerechten Schimmelsanierung in Mühldorf am Inn und Umgebung.",
   facts: [
-    { label: "Unternehmen", value: "Schmid-Bau GmbH" },
-    { label: "Schwerpunkt", value: "Hochbau, Tiefbau & Baustoffhandel" },
-    { label: "Übernahme", value: "2007 (Familienbetrieb seit 1992)" },
+    { label: "Unternehmen", value: "Malerei & Bautenschutz Sascha Schmidt" },
+    { label: "Schwerpunkt", value: "Malerei, Bautenschutz & Sanierung" },
+    { label: "Erfahrung", value: "20 Jahre im Bauhandwerk" },
   ],
 };
 
@@ -96,14 +96,14 @@ export function TeamSection() {
   }, []);
 
   return (
-    <div className="relative" style={{ backgroundColor: "#0A1628" }} ref={sectionRef}>
+    <div className="relative" style={{ backgroundColor: "#141414" }} ref={sectionRef}>
 
       <div className="relative h-screen w-full overflow-hidden flex">
 
         {/* Links: Text */}
         <div className="flex h-full w-1/2 flex-col justify-center px-12 md:px-16 lg:px-20">
-          <p className="team-eyebrow mb-5 font-body text-xs font-semibold uppercase tracking-[0.32em]" style={{ color: "#5AACCF" }}>
-            {michael.num} · Geschäftsführung
+          <p className="team-eyebrow mb-5 font-body text-xs font-semibold uppercase tracking-[0.32em]" style={{ color: "#B8935A" }}>
+            {michael.num} · Inhaber & Meister
           </p>
 
           <div style={{ overflow: "hidden", marginBottom: "0.5rem" }}>
@@ -119,7 +119,7 @@ export function TeamSection() {
             {michael.title} · {michael.role}
           </p>
 
-          <div className="team-divider mb-8 h-px w-12" style={{ backgroundColor: "#5AACCF" }} />
+          <div className="team-divider mb-8 h-px w-12" style={{ backgroundColor: "#B8935A" }} />
 
           <p className="team-bio mb-10 max-w-md font-body text-sm leading-relaxed text-white/60 md:text-base">
             {michael.bio}
@@ -128,7 +128,7 @@ export function TeamSection() {
           <div className="mb-10 space-y-4">
             {michael.facts.map((f) => (
               <div key={f.label} className="team-fact flex items-baseline gap-4">
-                <span className="w-28 shrink-0 font-body text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: "#5AACCF" }}>
+                <span className="w-28 shrink-0 font-body text-xs font-semibold uppercase tracking-[0.18em]" style={{ color: "#B8935A" }}>
                   {f.label}
                 </span>
                 <span className="font-body text-sm text-white/80">{f.value}</span>
@@ -140,18 +140,29 @@ export function TeamSection() {
             href={`mailto:${michael.email}`}
             className="team-email inline-flex items-center gap-2 font-body text-sm text-white/50 transition-colors duration-200 hover:text-white"
           >
-            {michael.email} <span style={{ color: "#5AACCF" }}>→</span>
+            {michael.email} <span style={{ color: "#B8935A" }}>→</span>
           </a>
         </div>
 
-        {/* Rechts: Bild */}
-        <div className="team-img-wrap h-full w-1/2 bg-[#f0ede8]">
-          <img
-            src={michael.image}
-            alt={michael.name}
-            className="h-full w-full object-cover"
-            style={{ objectPosition: "30% 15%" }}
-          />
+        {/* Rechts: Platzhalter */}
+        <div className="team-img-wrap h-full w-1/2 flex flex-col items-center justify-center gap-4" style={{ backgroundColor: "#1C1C1C" }}>
+          <div style={{
+            width: 96,
+            height: 96,
+            borderRadius: "50%",
+            border: "2px dashed rgba(184,147,90,0.4)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}>
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(184,147,90,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <p style={{ fontFamily: "Syne, sans-serif", fontSize: "0.65rem", letterSpacing: "0.25em", textTransform: "uppercase", color: "rgba(184,147,90,0.4)" }}>
+            Foto folgt
+          </p>
         </div>
 
       </div>

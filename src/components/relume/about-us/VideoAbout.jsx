@@ -82,7 +82,7 @@ export function VideoAbout() {
           <h2
             ref={headingRef}
             className="font-heading font-bold text-text-primary leading-tight"
-            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#0A1628" }}
+            style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: "#141414" }}
           >
             Drei Generationen. Eine Überzeugung.
           </h2>
@@ -102,8 +102,8 @@ export function VideoAbout() {
         </div>
 
         {/* Text below */}
-        <p ref={paraRef} className="mt-6 font-body text-base leading-relaxed text-[#0A1628]/60 md:text-lg max-w-xl">
-          Was Michael Schmid-Bau 1952 mit drei Mitarbeitern begann, tragen heute
+        <p ref={paraRef} className="mt-6 font-body text-base leading-relaxed text-[#141414]/60 md:text-lg max-w-xl">
+          Was Sascha Schmidtt Maler 1952 mit drei Mitarbeitern begann, tragen heute
           über 60 Fachkräfte weiter. Die Werte haben sich nicht verändert –
           nur die Möglichkeiten, sie umzusetzen.
         </p>

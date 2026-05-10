@@ -2,17 +2,15 @@
 
 import { Link } from "react-router-dom";
 
-const HOUSE_PATH = "M6 20L24 6L42 20V42H30V30H18V42H6V20Z";
-
 const navCols = [
   {
     heading: "Leistungen",
     links: [
-      { label: "Schlüsselfertiges Bauen", to: "/leistungen" },
-      { label: "Rohbau & Planung", to: "/leistungen" },
+      { label: "Malerei & Farbgestaltung", to: "/leistungen" },
+      { label: "Bautenschutz & Schimmelsanierung", to: "/leistungen" },
+      { label: "Bodenverlegung & Parkett", to: "/leistungen" },
+      { label: "Betonsanierung & Beschichtungen", to: "/leistungen" },
       { label: "Renovierung & Sanierung", to: "/leistungen" },
-      { label: "Tiefbau", to: "/leistungen" },
-      { label: "Transporte & Gerüstbau", to: "/leistungen" },
     ],
   },
   {
@@ -21,7 +19,6 @@ const navCols = [
       { label: "Über uns", to: "/ueber-uns" },
       { label: "Unser Prozess", to: "/prozess" },
       { label: "Projekte", to: "/projekte" },
-      { label: "Referenzen", to: "/referenzen" },
     ],
   },
   {
@@ -29,7 +26,6 @@ const navCols = [
     links: [
       { label: "Beratung anfragen", to: "/kontakt" },
       { label: "FAQ", to: "/kontakt" },
-      { label: "Auszeichnungen", to: "/auszeichnungen" },
       { label: "Impressum", to: "#" },
       { label: "Datenschutz", to: "#" },
     ],
@@ -40,7 +36,7 @@ export function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ background: "linear-gradient(160deg, #0E2A6B 0%, #0A2059 55%, #07194A 100%)" }}
+      style={{ background: "linear-gradient(160deg, #1A0E04 0%, #141414 55%, #0D0D0D 100%)" }}
     >
       {/* Top hairline accent */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-white/50 to-transparent" />
@@ -55,13 +51,13 @@ export function Footer() {
         }}
       />
 
-      {/* Ghost "SCHMID" */}
+      {/* Ghost "SCHMIDT" */}
       <div
         className="pointer-events-none absolute bottom-0 left-0 select-none font-heading font-bold leading-none text-white"
         style={{ fontSize: "clamp(6rem, 18vw, 22rem)", opacity: 0.04, letterSpacing: "-0.02em", lineHeight: 0.85 }}
         aria-hidden="true"
       >
-        SCHMID
+        SCHMIDT
       </div>
 
       <div className="container relative px-[5%] pt-16 pb-10 md:pt-24 md:pb-12">
@@ -71,56 +67,52 @@ export function Footer() {
 
           {/* Brand column */}
           <div>
-            <Link to="/" className="mb-6 flex items-center gap-2.5">
-              <svg viewBox="0 0 48 48" fill="none" style={{ width: 22, height: 22, flexShrink: 0 }}>
-                <path
-                  d={HOUSE_PATH}
-                  stroke="white"
-                  strokeWidth="2.5"
-                  strokeLinejoin="round"
-                  strokeLinecap="round"
-                  fill="none"
-                />
-              </svg>
-              <span className="font-heading text-lg font-bold tracking-[0.1em] uppercase text-white">
-                Schmid-Bau
-              </span>
-              <span className="font-heading text-[0.6rem] font-semibold tracking-[0.18em] uppercase text-white/50 self-end pb-[2px]">
-                GmbH
-              </span>
+            <Link to="/" className="mb-6 flex items-center gap-3">
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", flexShrink: 0 }}>
+                <span style={{ fontFamily: "Syne, sans-serif", fontWeight: 800, fontSize: "1.75rem", color: "#B8935A", lineHeight: 0.85, letterSpacing: "-0.02em" }}>S</span>
+                <div style={{ width: "100%", height: "2px", backgroundColor: "#B8935A", marginTop: "4px" }} />
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", lineHeight: 1.1 }}>
+                <span className="font-heading text-base font-bold tracking-[0.12em] text-white uppercase">
+                  Sascha Schmidt
+                </span>
+                <span className="font-body text-[0.6rem] font-semibold tracking-[0.2em] text-white/40 uppercase">
+                  Malerei & Bautenschutz
+                </span>
+              </div>
             </Link>
 
             <p className="mb-8 font-body text-sm leading-relaxed text-white/45 max-w-[22ch]">
-              Seit 1992 bauen wir Qualität in der Region Erding. Persönlichkeit und Beständigkeit.
+              Seit 20 Jahren Ihr Experte für Malerei & Bautenschutz in Mühldorf am Inn und Umgebung.
             </p>
 
             {/* Contact */}
             <div className="space-y-3">
               <a
-                href="tel:+4908762426420"
+                href="tel:+4915207827485"
                 className="flex items-center gap-3 font-body text-sm text-white/55 transition-colors duration-200 hover:text-white"
               >
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-60">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.36h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/>
                 </svg>
-                08762 / 426420
+                01520 7827485
               </a>
               <a
-                href="mailto:schmid-bau@gmx.net"
+                href="mailto:info@malerei-schmidt.de"
                 className="flex items-center gap-3 font-body text-sm text-white/55 transition-colors duration-200 hover:text-white"
               >
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-60">
                   <rect x="2" y="4" width="20" height="16" rx="2"/>
                   <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                 </svg>
-                schmid-bau@gmx.net
+                info@malerei-schmidt.de
               </a>
               <p className="flex items-start gap-3 font-body text-sm text-white/40">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 opacity-60 mt-0.5">
                   <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
-                Berglern · Landkreis Erding
+                Am Industriepark 10, 84453 Mühldorf am Inn
               </p>
             </div>
           </div>
@@ -150,7 +142,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-body text-xs text-white/25">
-            © {new Date().getFullYear()} Schmid-Bau GmbH. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} Malerei & Bautenschutz Sascha Schmidt. Alle Rechte vorbehalten.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="font-body text-xs text-white/30 transition-colors duration-200 hover:text-white/60">

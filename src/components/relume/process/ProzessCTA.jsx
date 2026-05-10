@@ -37,7 +37,7 @@ export function ProzessCTA() {
     <section
       ref={sectionRef}
       className="relative min-h-screen w-full overflow-hidden flex items-center"
-      style={{ background: "#0E2A6B" }}
+      style={{ background: "#B8935A" }}
     >
       {/* Background photo */}
       <img
@@ -149,7 +149,7 @@ export function ProzessCTA() {
         </h2>
 
         <p className="cta-sub max-w-[460px] font-body text-base leading-relaxed text-white/55 md:text-lg mb-12">
-          Egal ob Neubau, Sanierung oder Umbau – wir starten mit einem
+          Egal ob Innenraumgestaltung, Fassade oder Schimmelsanierung – wir starten mit einem
           unverbindlichen Erstgespräch bei Ihnen vor Ort. Kostenfrei und
           ohne weitere Verpflichtung.
         </p>
@@ -160,7 +160,7 @@ export function ProzessCTA() {
           <a
             href="#kontakt"
             className="cta-btn group relative inline-flex items-center gap-4 overflow-hidden px-8 py-[18px] font-body text-[0.7rem] font-semibold uppercase tracking-[0.22em]"
-            style={{ background: "#FFFFFF", color: "#0E2A6B" }}
+            style={{ background: "#FFFFFF", color: "#B8935A" }}
           >
             <span className="relative z-10">Erstgespräch vereinbaren</span>
             <svg
@@ -175,14 +175,14 @@ export function ProzessCTA() {
             {/* Sweep on hover */}
             <span
               className="absolute inset-0 -translate-x-full transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:translate-x-0"
-              style={{ background: "rgba(7,25,74,0.30)" }}
+              style={{ background: "rgba(13,13,13,0.30)" }}
               aria-hidden="true"
             />
           </a>
 
           {/* Secondary: phone link */}
           <a
-            href="tel:+498912345678"
+            href="tel:+4915207827485"
             className="cta-btn group inline-flex items-center gap-4 font-body text-[0.7rem] uppercase tracking-[0.22em] text-white/65 transition-colors hover:text-white"
           >
             <span>Direkt anrufen</span>
@@ -191,7 +191,7 @@ export function ProzessCTA() {
               className="text-sm font-semibold tracking-[0.05em] text-white/85"
               style={{ fontFamily: "Syne, sans-serif" }}
             >
-              +49 89 1234 5678
+              01520 7827485
             </span>
           </a>
         </div>
@@ -205,19 +205,19 @@ export function ProzessCTA() {
             <p className="font-body text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-white/30 mb-2">
               Kontakt
             </p>
-            <p className="font-body text-sm text-white/85">info@hoser-bau.de</p>
+            <p className="font-body text-sm text-white/85">info@malerei-schmidt.de</p>
           </div>
           <div className="cta-meta">
             <p className="font-body text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-white/30 mb-2">
               Standort
             </p>
-            <p className="font-body text-sm text-white/85">München · Bayern</p>
+            <p className="font-body text-sm text-white/85">Mühldorf am Inn · Bayern</p>
           </div>
           <div className="cta-meta">
             <p className="font-body text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-white/30 mb-2">
-              Beratung
+              Erreichbarkeit
             </p>
-            <p className="font-body text-sm text-white/85">Mo – Fr · 8 – 18 Uhr</p>
+            <p className="font-body text-sm text-white/85">Mo – Fr · 7 – 17 Uhr</p>
           </div>
           <div className="cta-meta">
             <p className="font-body text-[0.58rem] font-semibold uppercase tracking-[0.32em] text-white/30 mb-2">

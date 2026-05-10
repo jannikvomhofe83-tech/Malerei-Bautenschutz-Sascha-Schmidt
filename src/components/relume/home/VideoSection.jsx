@@ -5,24 +5,24 @@ import { gsap } from "../../../utils/gsap";
 
 const keyFacts = [
   {
-    lead: "12–18",
-    leadUnit: "Monate",
-    desc: "Vom ersten Entwurf bis zur Schlüsselübergabe.",
+    lead: "20",
+    leadUnit: "Jahre Erfahrung",
+    desc: "Seit 20 Jahren im Bauhandwerk als Maler und Lackierer tätig.",
   },
   {
-    lead: "1",
-    leadUnit: "Ansprechpartner",
-    desc: "Statt zehn Fachgewerken – eine Stimme.",
+    lead: "5/5",
+    leadUnit: "Google Bewertung",
+    desc: "Höchste Kundenzufriedenheit – bestätigt durch zahlreiche Rezensionen.",
   },
   {
-    lead: "Festpreis",
-    leadUnit: "garantiert",
-    desc: "Keine Nachträge, keine Überraschungen.",
+    lead: "4,9/5",
+    leadUnit: "MyHammer",
+    desc: "315 Rezensionen – Ihr Vertrauen ist unser Anspruch.",
   },
   {
     lead: "100%",
-    leadUnit: "eigenes Personal",
-    desc: "Ausgebildete Maurer, Maler, Zimmerer.",
+    leadUnit: "Eigenleistung",
+    desc: "Persönliche Betreuung von der Beratung bis zur Fertigstellung.",
   },
 ];
 
@@ -182,12 +182,12 @@ export function VideoSection() {
       id="video-section"
       ref={sectionRef}
       className="relative"
-      style={{ height: "280vh", backgroundColor: "#FDFCF8" }}
+      style={{ height: "280vh", backgroundColor: "#FAFAFA" }}
     >
-      <div className="sticky top-0 h-screen overflow-hidden" style={{ backgroundColor: "#FDFCF8" }}>
+      <div className="sticky top-0 h-screen overflow-hidden" style={{ backgroundColor: "#FAFAFA" }}>
 
         {/* Explicit light background layer behind everything */}
-        <div className="absolute inset-0" style={{ backgroundColor: "#FDFCF8", zIndex: 0 }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "#FAFAFA", zIndex: 0 }} />
 
         {/* Clip-path wrapper for the entry portal effect */}
         <div
@@ -236,12 +236,12 @@ export function VideoSection() {
                   className="font-bold"
                   style={{
                     textDecoration: "underline",
-                    textDecorationColor: "#7A8FC8",
+                    textDecorationColor: "#C9A96E",
                     textUnderlineOffset: "6px",
                     textDecorationThickness: "2px",
                   }}
                 >
-                  Bauskizze auf dem Schreibtisch
+                  ersten Beratung
                 </strong>
               </span>
             </div>
@@ -252,12 +252,12 @@ export function VideoSection() {
                   className="font-bold"
                   style={{
                     textDecoration: "underline",
-                    textDecorationColor: "#7A8FC8",
+                    textDecorationColor: "#C9A96E",
                     textUnderlineOffset: "6px",
                     textDecorationThickness: "2px",
                   }}
                 >
-                  fertigen Gebäude.
+                  perfekten Ergebnis.
                 </strong>
               </span>
             </div>
@@ -269,7 +269,7 @@ export function VideoSection() {
         <div className="absolute inset-0 z-20 flex items-center px-[5%]">
           <div className="container">
             <p className="vs-keyfact-eyebrow mb-3 font-body text-sm font-semibold uppercase tracking-[0.28em] text-white">
-              So bauen wir
+              So arbeiten wir
             </p>
             <div
               className="vs-keyfact-divider mb-12 h-px w-16 bg-white/60"

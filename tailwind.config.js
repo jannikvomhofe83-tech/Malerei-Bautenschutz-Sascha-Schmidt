@@ -14,41 +14,33 @@ export default {
       },
       colors: {
         // ── Surfaces ────────────────────────────────────────────────
-        // primary  = warm "blueprint paper" canvas — main page bg
-        // secondary = slightly more pigmented for alternating sections
-        // alternative = deep brand blue — used for accent / feature blocks
         background: {
-          primary: "#FDFCF8",
-          secondary: "#F2EFE6",
-          alternative: "#0E2A6B",
+          primary: "#FAFAFA",
+          secondary: "#F2F0EC",
+          alternative: "#141414",
         },
         // ── Text ────────────────────────────────────────────────────
-        // primary  = near-black w/ cool undertone (on light)
-        // secondary = mid-gray (on light)
-        // alternative = white (used on accent blue blocks)
         text: {
-          DEFAULT: "#0A1628",
-          primary: "#0A1628",
-          secondary: "#5A6478",
-          alternative: "#FFFFFF",
+          DEFAULT: "#141414",
+          primary: "#141414",
+          secondary: "#6B6B6B",
+          alternative: "#FAFAFA",
         },
         // ── Borders ─────────────────────────────────────────────────
         border: {
-          primary: "rgba(14,42,107,0.14)",
-          alternative: "rgba(14,42,107,0.08)",
+          primary: "rgba(184,147,90,0.18)",
+          alternative: "rgba(184,147,90,0.10)",
         },
         // ── Brand palette ───────────────────────────────────────────
-        // "hoser-*" tokens kept by name for backwards compatibility but
-        // repointed to the new SCHMID-BAU light + deep-blue identity.
         hoser: {
-          gold: "#0E2A6B",         // primary brand accent (was gold)
-          "gold-light": "#1A3D8A", // brighter blue
-          cream: "#FDFCF8",        // canvas off-white
-          charcoal: "#0A1628",     // near-black ink
-          stone: "#5A6478",        // mid gray
-          navy: "#0E2A6B",         // deep brand blue — feature blocks
-          "navy-light": "#1A3D8A",
-          "navy-deep": "#07194A",
+          gold: "#B8935A",
+          "gold-light": "#C9A96E",
+          cream: "#FAFAFA",
+          charcoal: "#141414",
+          stone: "#6B6B6B",
+          navy: "#141414",
+          "navy-light": "#1C1C1C",
+          "navy-deep": "#0D0D0D",
         },
         neutral: {
           lightest: "#FFFFFF",
@@ -84,7 +76,7 @@ export default {
         },
       },
       boxShadow: {
-        xlarge: "0px 24px 48px -12px rgba(14, 42, 107, 0.10)",
+        xlarge: "0px 24px 48px -12px rgba(184, 147, 90, 0.12)",
       },
       fontSize: {
         md: ["1.125rem", { lineHeight: "1.5" }],

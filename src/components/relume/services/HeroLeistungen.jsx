@@ -72,7 +72,7 @@ export function HeroLeistungen() {
 
       // Heading words
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Leistungen mit System.")
+        ? splitWords(headingRef.current, "Leistungen aus einer Hand.")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
 
@@ -151,14 +151,14 @@ export function HeroLeistungen() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-[#0E2A6B] text-white"
+      className="relative w-full overflow-hidden bg-[#B8935A] text-white"
       style={{ height: "100vh", minHeight: "720px" }}
     >
       {/* Background image */}
       <img
         ref={imageRef}
-        src="/images/leistungen-hero.jpg"
-        alt="Schmid-Bau GmbH – Leistungen"
+        src="/images/leistungen-hero-new.png"
+        alt="Malerei & Bautenschutz Sascha Schmidt – Leistungen"
         className="absolute inset-0 h-full w-full object-cover"
         style={{ willChange: "transform, filter" }}
       />
@@ -169,7 +169,7 @@ export function HeroLeistungen() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(14,42,107,0.65) 0%, rgba(14,42,107,0.4) 35%, rgba(7,25,74,0.92) 100%)",
+            "linear-gradient(180deg, rgba(184,147,90,0.65) 0%, rgba(184,147,90,0.4) 35%, rgba(13,13,13,0.92) 100%)",
         }}
       />
       <div
@@ -194,7 +194,7 @@ export function HeroLeistungen() {
       {/* Top-right meta strip */}
       <div className="absolute top-24 right-[5%] hidden lg:flex items-center gap-3 font-body text-[11px] uppercase tracking-[0.3em] text-white/70">
         <span className="h-px w-10 bg-white/55" />
-        <span>Bauunternehmung</span>
+        <span>Malerei & Bautenschutz</span>
       </div>
 
       {/* Main content */}
@@ -213,7 +213,7 @@ export function HeroLeistungen() {
             className="font-heading font-bold leading-[0.95] tracking-tight text-white"
             style={{ fontSize: "clamp(3rem, 9vw, 9rem)" }}
           >
-            Leistungen mit System.
+            Leistungen aus einer Hand.
           </h1>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-y-10 md:gap-x-12 items-end">
@@ -221,9 +221,9 @@ export function HeroLeistungen() {
               ref={subRef}
               className="md:col-span-6 lg:col-span-5 font-body text-base md:text-lg leading-relaxed text-white/75 max-w-xl"
             >
-              Ein Ansprechpartner. Vom ersten Spatenstich bis zur
-              schlüsselfertigen Übergabe – wir verbinden traditionelles Handwerk
-              mit modernster Bautechnik.
+              Ihr Ansprechpartner für Malerei, Bautenschutz, Sanierung und mehr
+              in Mühldorf am Inn – wir verbinden traditionelles Handwerk mit
+              modernster Ausführungstechnik.
             </p>
 
             <div
@@ -235,7 +235,7 @@ export function HeroLeistungen() {
                   Standort
                 </span>
                 <span className="font-heading text-lg font-semibold text-white">
-                  Berglern · Erding
+                  Mühldorf am Inn
                 </span>
               </div>
             </div>
@@ -244,7 +244,7 @@ export function HeroLeistungen() {
               <a
                 ref={ctaRef}
                 href="#leistungen"
-                className="group inline-flex items-center gap-3 border border-white/45 hover:bg-[#0E2A6B] hover:border-[#0E2A6B] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.15em] text-white transition-all duration-300"
+                className="group inline-flex items-center gap-3 border border-white/45 hover:bg-[#B8935A] hover:border-[#B8935A] px-8 py-4 font-body text-sm font-semibold uppercase tracking-[0.15em] text-white transition-all duration-300"
               >
                 <span>Gewerke entdecken</span>
                 <span className="text-base transition-transform duration-300 group-hover:translate-x-1">

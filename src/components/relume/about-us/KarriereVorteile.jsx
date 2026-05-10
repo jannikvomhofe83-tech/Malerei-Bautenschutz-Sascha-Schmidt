@@ -40,12 +40,12 @@ const vorteile = [
   {
     num: "04",
     title: "Familiäres Team",
-    desc: "Seit 1992 Familienunternehmen. Flache Hierarchien, direkte Kommunikation, Respekt und Zusammenhalt.",
+    desc: "Kleines, eingespieltes Team mit flachen Hierarchien, direkter Kommunikation, Respekt und echtem Zusammenhalt.",
   },
   {
     num: "05",
     title: "Sicherer Arbeitsplatz",
-    desc: "Konstante Auftragslage durch starkes regionales Netzwerk – über 500 abgeschlossene Projekte seit 1952.",
+    desc: "Konstante Auftragslage durch starkes regionales Netzwerk – über 500 abgeschlossene Projekte im Raum Mühldorf.",
   },
   {
     num: "06",
@@ -139,13 +139,13 @@ export function KarriereVorteile() {
       ref={sectionRef}
       id="jobs"
       className="overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0E2A6B 0%, #0A2059 60%, #07194A 100%)" }}
+      style={{ background: "linear-gradient(180deg, #B8935A 0%, #0D0D0D 100%)" }}
     >
       {/* Top: image background behind heading */}
       <div
         className="relative px-[5%] py-16 md:py-24 lg:py-28"
         style={{
-          backgroundImage: "url('/images/bild14.jpg')",
+          backgroundImage: "url('/images/karriere-warum-wir.png')",
           backgroundSize: "cover",
           backgroundPosition: "center 30%",
         }}
@@ -154,25 +154,15 @@ export function KarriereVorteile() {
         <div
           className="absolute inset-0"
           style={{
-            background: "linear-gradient(to bottom, rgba(14,42,107,0.62) 0%, rgba(14,42,107,0.40) 40%, rgba(7,25,74,0.78) 75%, rgba(7,25,74,1) 100%)",
+            background: "linear-gradient(to bottom, rgba(184,147,90,0.62) 0%, rgba(184,147,90,0.40) 40%, rgba(13,13,13,0.78) 75%, rgba(13,13,13,1) 100%)",
           }}
         />
 
-        {/* Decorative background text */}
-        <div
-          ref={ghostRef}
-          className="pointer-events-none absolute right-[-2%] top-[50%] -translate-y-1/2 select-none font-heading font-bold leading-none text-white/[0.07]"
-          style={{ fontSize: "clamp(6rem, 18vw, 20rem)" }}
-          aria-hidden="true"
-        >
-          SCHMID
-        </div>
-
-        <div className="container relative z-10">
+<div className="container relative z-10">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-end">
             <div>
               <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.28em] text-white/85">
-                Karriere bei Schmid-Bau
+                Karriere bei Schmidt Maler
               </p>
               <h2
                 ref={headingRef}
@@ -190,7 +180,10 @@ export function KarriereVorteile() {
               <a
                 ref={ctaRef}
                 href="#stellenangebote"
-                className="mt-6 inline-flex items-center gap-2 border border-white/35 px-6 py-3 font-body text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all duration-200 hover:bg-white hover:text-hoser-gold hover:border-white"
+                className="mt-6 inline-flex items-center gap-2 border border-white/35 px-6 py-3 font-body text-sm font-semibold uppercase tracking-[0.12em] text-white transition-all duration-200 hover:bg-white hover:border-white"
+                style={{}}
+                onMouseEnter={e => e.currentTarget.style.color = "#B8935A"}
+                onMouseLeave={e => e.currentTarget.style.color = ""}
               >
                 Alle Stellen ansehen <span>→</span>
               </a>
@@ -202,23 +195,46 @@ export function KarriereVorteile() {
       {/* Benefits grid */}
       <div className="px-[5%] pb-16 md:pb-24 lg:pb-28">
         <div className="container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.10]">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {vorteile.map((v, idx) => (
               <div
                 key={v.num}
                 ref={(el) => (cellsRef.current[idx] = el)}
-                className="group relative bg-[#0A2059] p-8 md:p-10 transition-colors duration-300 hover:bg-[#0C2666]"
+                className="group relative overflow-hidden p-7 md:p-8 transition-all duration-300 cursor-default"
+                style={{
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderLeft: "3px solid rgba(255,255,255,0.15)",
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = "rgba(255,255,255,0.07)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.25)";
+                  e.currentTarget.style.borderLeftColor = "#B8935A";
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = "rgba(255,255,255,0.03)";
+                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                  e.currentTarget.style.borderLeftColor = "rgba(255,255,255,0.15)";
+                }}
               >
-                <span data-vt-num className="mb-6 block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-white/60">
+                {/* Ghost number */}
+                <span
+                  className="pointer-events-none absolute right-4 top-3 select-none font-heading font-bold leading-none text-white"
+                  style={{ fontSize: "5rem", opacity: 0.04 }}
+                >
                   {v.num}
                 </span>
-                <h3 data-vt-title className="mb-3 font-heading text-lg font-bold text-white md:text-xl transition-colors duration-300">
+
+                <span data-vt-num className="mb-5 block font-body text-[10px] font-semibold uppercase tracking-[0.32em] text-white/50">
+                  {v.num}
+                </span>
+                <h3 data-vt-title className="mb-3 font-heading text-lg font-bold text-white md:text-xl">
                   {v.title}
                 </h3>
                 <p data-vt-desc className="font-body text-sm leading-relaxed text-white/55">
                   {v.desc}
                 </p>
-                <div data-vt-line className="absolute bottom-0 left-0 h-[2px] w-full bg-white/40" />
+                <div data-vt-line className="absolute bottom-0 left-0 h-[2px] w-full" style={{ background: "rgba(255,255,255,0.08)" }} />
               </div>
             ))}
           </div>

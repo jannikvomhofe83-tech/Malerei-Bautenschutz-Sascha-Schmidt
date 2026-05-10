@@ -160,16 +160,12 @@ export function Layout16() {
 
   return (
     <section ref={sectionRef} className="relative px-[5%] py-16 md:py-24 lg:py-28 overflow-hidden">
-      {/* Background video */}
-      <video
-        ref={videoRef}
-        src="/videos/video5.mp4"
+      {/* Background image */}
+      <img
+        src="/images/handshake-quality.png"
+        alt="Kompetenz und Terminsicherheit"
         className="absolute inset-0 h-full w-full object-cover"
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{ willChange: "transform, filter" }}
+        style={{ willChange: "transform" }}
       />
       {/* Dark overlay */}
       <div ref={overlayRef} className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30" />
@@ -178,8 +174,8 @@ export function Layout16() {
       <div className="container relative z-10">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p ref={eyebrowRef} className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em] text-hoser-gold">
-              Warum Schmid-Bau
+            <p ref={eyebrowRef} className="mb-4 font-body text-sm font-semibold uppercase tracking-[0.25em]" style={{ color: "#B8935A" }}>
+              Warum Schmidt Maler
             </p>
             <h2
               ref={headingRef}
@@ -200,7 +196,7 @@ export function Layout16() {
             <ul ref={listRef} className="mb-8 space-y-4">
               {points.map((p) => (
                 <li key={p} className="flex items-start gap-3 font-body text-sm text-white/90 md:text-base">
-                  <span data-dot className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-hoser-gold" />
+                  <span data-dot className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: "#B8935A" }} />
                   {p}
                 </li>
               ))}
@@ -211,7 +207,7 @@ export function Layout16() {
               className="inline-flex items-center gap-2 border border-white/60 px-7 py-3 font-body text-sm font-semibold tracking-wide text-white transition-colors duration-200 hover:border-hoser-gold hover:text-hoser-gold"
             >
               Projekt besprechen
-              <span className="text-hoser-gold">→</span>
+              <span style={{ color: "#B8935A" }}>→</span>
             </a>
           </div>
         </div>

@@ -5,28 +5,28 @@ import { gsap } from "../../../utils/gsap";
 
 const photos = [
   {
-    src: "/images/hero-aerial-construction.jpg",
-    caption: "Luftaufnahme einer aktiven Baustelle – präzise Koordination aller Gewerke von Beginn an.",
+    src: "/images/projekt-innenraum.png",
+    caption: "Innenraumgestaltung – von der Farbberatung bis zum fertigen Anstrich, alles aus einer Hand.",
     span: "col-span-2 row-span-2",
   },
   {
-    src: "/images/Beispiel-Projekte/Geruestbau-300x225.webp",
-    caption: "Gerüstbau für sichere und effiziente Arbeiten auf jeder Baustelle.",
+    src: "/images/craftsmen-painting.png",
+    caption: "Professionelle Streicharbeiten mit eigenem Fachpersonal – präzise, sauber und termingerecht.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/Beispiel-Projekte/Referenz5-300x170.webp",
-    caption: "Referenzprojekte aus dem Raum Erding und München – realisiert mit eigenem Fachpersonal.",
+    src: "/images/projekt-fassade.png",
+    caption: "Fassadenanstrich und Außenbeschichtung – witterungsbeständig und langlebig.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/Beispiel-Projekte/Rohbau-300x225.webp",
-    caption: "Solider Rohbau als Basis für alle Folgegewerke – präzise und termingerecht.",
+    src: "/images/service-bautenschutz.png",
+    caption: "Bautenschutz und Schimmelsanierung – fachgerecht und nachhaltig gelöst.",
     span: "col-span-1 row-span-1",
   },
   {
-    src: "/images/bild13.jpg",
-    caption: "Fertigstellung und Übergabe – pünktlich, im Budgetrahmen, mit Festpreisgarantie.",
+    src: "/images/projekt-sanierung.png",
+    caption: "Renovierung und Sanierung – zuverlässig, im vereinbarten Kostenrahmen.",
     span: "col-span-1 row-span-1",
   },
 ];
@@ -63,7 +63,7 @@ export function Gallery22() {
       // Heading
       gsap.set(eyebrowRef.current, { y: 22, opacity: 0 });
       const headingWords = headingRef.current
-        ? splitWords(headingRef.current, "Einblicke vor Ort")
+        ? splitWords(headingRef.current, "Einblicke aus unseren Projekten")
         : [];
       gsap.set(headingWords, { yPercent: 110 });
       gsap.set(subRef.current, { y: 18, opacity: 0 });
@@ -129,7 +129,7 @@ export function Gallery22() {
 
         {/* Heading */}
         <div className="mb-12 md:mb-16">
-          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#5AACCF]">
+          <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
             Einblicke
           </p>
           <h2
@@ -137,10 +137,10 @@ export function Gallery22() {
             className="font-heading font-bold leading-tight tracking-tight text-white"
             style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
           >
-            Einblicke vor Ort
+            Einblicke aus unseren Projekten
           </h2>
           <p ref={subRef} className="mt-4 font-body text-base text-white/60">
-            Jedes Projekt erzählt von bayerischer Präzision und Verlässlichkeit.
+            Malerei, Bautenschutz, Sanierung – handwerkliche Qualität aus Mühldorf am Inn.
           </p>
         </div>
 
@@ -184,7 +184,7 @@ export function Gallery22() {
                     transform: hovered === i ? "translateY(0)" : "translateY(12px)",
                   }}
                 >
-                  <div className="mb-3 h-[2px] w-8 bg-[#5AACCF]" />
+                  <div className="mb-3 h-[2px] w-8 bg-[#B8935A]" />
                   <p className="font-body text-sm leading-relaxed text-white/90 md:text-base">
                     {p.caption}
                   </p>

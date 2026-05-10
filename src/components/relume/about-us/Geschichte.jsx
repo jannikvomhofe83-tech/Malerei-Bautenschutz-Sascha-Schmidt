@@ -8,32 +8,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
   {
-    year: "1992",
-    title: "Die Gründung",
-    desc: "Die Schmid-Bau GmbH wird als Familienbetrieb gegründet. Von Anfang an stehen Handwerk, Verlässlichkeit und persönliche Betreuung im Mittelpunkt.",
-    detail: "Was als Familienbetrieb in der Region Erding begann, legte den Grundstein für über drei Jahrzehnte Erfolgsgeschichte im bayerischen Bauhandwerk.",
-    img: "/images/timeline/1952.jpg",
+    year: "Beginn",
+    title: "Der Einstieg ins Handwerk",
+    desc: "Sascha Schmidt beginnt seine Ausbildung als Maler und Lackierer – aus Leidenschaft für das Handwerk und dem Wunsch, hochwertige Arbeit zu leisten.",
+    detail: "Von Anfang an stehen Qualität, Verlässlichkeit und persönliche Betreuung im Mittelpunkt – Werte, die das Unternehmen bis heute prägen.",
   },
   {
-    year: "2007",
-    title: "Michael Schmid übernimmt",
-    desc: "Michael Schmid übernimmt das väterliche Unternehmen und führt es mit denselben Grundwerten weiter: Qualität, Persönlichkeit und Beständigkeit.",
-    detail: "Unter seiner Führung entwickelt sich das Leistungsspektrum stetig weiter – von Hochbau und Sanierung bis zu Tiefbau und landwirtschaftlichen Hallen.",
-    img: "/images/timeline/1970.jpg",
+    year: "Gründung",
+    title: "Malerei & Bautenschutz Sascha Schmidt",
+    desc: "Sascha Schmidt gründet seinen eigenen Betrieb in Mühldorf am Inn. Von Anfang an das volle Leistungsspektrum: Malerei, Bautenschutz, Sanierung und mehr.",
+    detail: "Kundenzufriedenheit steht dabei an erster Stelle. Jeder Auftrag wird mit persönlichem Einsatz und höchster Sorgfalt abgewickelt.",
   },
   {
-    year: "2015",
-    title: "Neue Heimat",
-    desc: "Schmid-Bau zieht in eine ehemalige Schnapsbrennerei in Berglern ein – ein Ort mit Geschichte und Charakter, der perfekt zum Unternehmen passt.",
-    detail: "Das neue Betriebsgelände bietet optimale Voraussetzungen für einen modernen Fuhrpark, Materiallager und Baustoffhandel.",
-    img: "/images/timeline/1990.jpg",
+    year: "Wachstum",
+    title: "Erweiterung der Leistungen",
+    desc: "Das Angebot wächst stetig: Bodenverlegung, Parkettschleifen, Betonsanierung und hochwertige Beschichtungen kommen zum Portfolio hinzu.",
+    detail: "Ausschließlich Produkte renommierter Hersteller in Profiqualität – für langfristigen Schutz und ästhetisch ansprechende Ergebnisse.",
   },
   {
     year: "Heute",
-    title: "30+ Jahre Baukultur",
-    desc: "Über 30 Jahre nach der Gründung steht Schmid-Bau GmbH für bayerisches Handwerk auf höchstem Niveau. Mit zehnköpfigem Team und breitem Leistungsspektrum.",
-    detail: "Von schlüsselfertigem Wohnungsbau bis Tiefbau, Gerüstbau, Transporte und Baustoffhandel – weit über die Region Erding hinaus bekannt und geschätzt.",
-    img: "/images/timeline/heute.jpg",
+    title: "20+ Jahre Erfahrung",
+    desc: "Über 20 Jahre Erfahrung im Bauhandwerk. Malerei & Bautenschutz Sascha Schmidt steht für Handwerksqualität auf höchstem Niveau in Mühldorf am Inn.",
+    detail: "Von Malerei und Schimmelsanierung bis hin zu Bodenverlegung und Betonsanierung – weit bekannt und mit höchster Kundenzufriedenheit.",
   },
 ];
 
@@ -125,12 +121,9 @@ export function Geschichte() {
         );
       });
 
-      // Each milestone card slides in from the right + image clip-path wipe
+      // Each milestone card slides in from the right
       cardRefs.current.forEach((card) => {
         if (!card) return;
-        const img = card.querySelector("[data-milestone-img]");
-        const innerImg = img?.querySelector("img");
-
         gsap.fromTo(
           card,
           { opacity: 0, x: 60 },
@@ -146,21 +139,6 @@ export function Geschichte() {
             },
           }
         );
-
-        if (img) {
-          gsap.set(img, { clipPath: "inset(0 0 100% 0)" });
-          gsap.set(innerImg, { scale: 1.2 });
-
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: card,
-              start: "top 78%",
-              toggleActions: "play none none reverse",
-            },
-          })
-            .to(img, { clipPath: "inset(0 0 0% 0)", duration: 1.0, ease: "expo.inOut" }, 0.2)
-            .to(innerImg, { scale: 1, duration: 1.3, ease: "power3.out" }, 0.3);
-        }
       });
 
     }, sectionRef);
@@ -169,7 +147,7 @@ export function Geschichte() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="overflow-hidden" style={{ backgroundColor: "#FDFCF8" }}>
+    <section ref={sectionRef} className="overflow-hidden" style={{ backgroundColor: "#FAFAFA" }}>
 
       {/* Top third — image background with heading */}
       <div
@@ -190,18 +168,18 @@ export function Geschichte() {
 
         <div className="container relative z-10">
           <div className="max-w-2xl">
-            <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#0E2A6B]">
-              Seit 1992
+            <p ref={eyebrowRef} className="mb-3 font-body text-sm font-semibold uppercase tracking-[0.25em] text-[#B8935A]">
+              Seit 20 Jahren
             </p>
             <h2
               ref={headingRef}
-              className="mb-5 font-heading font-bold leading-tight tracking-tight text-[#0A1628]"
+              className="mb-5 font-heading font-bold leading-tight tracking-tight text-[#141414]"
               style={{ fontSize: "clamp(2rem, 4vw, 4rem)" }}
             >
               Unsere Geschichte
             </h2>
-            <p ref={subRef} className="font-body text-base leading-relaxed text-[#0A1628]/55">
-              Familienunternehmen seit 1992.<br />Ein Anspruch: Projekte für Generationen.
+            <p ref={subRef} className="font-body text-base leading-relaxed text-[#141414]/55">
+              Handwerksbetrieb in Mühldorf am Inn.<br />Ein Anspruch: Qualität, die langfristig schützt und begeistert.
             </p>
           </div>
         </div>
@@ -220,7 +198,7 @@ export function Geschichte() {
             style={{
               left: "18px",
               width: "12px",
-              background: "linear-gradient(to right, rgba(14,42,107,0.18) 0%, #DDDED8 30%, #E5E4DC 50%, #DDDED8 70%, rgba(14,42,107,0.12) 100%)",
+              background: "linear-gradient(to right, rgba(184,147,90,0.18) 0%, #DDDED8 30%, #E5E4DC 50%, #DDDED8 70%, rgba(184,147,90,0.12) 100%)",
               borderRadius: "6px",
             }}
           >
@@ -229,8 +207,8 @@ export function Geschichte() {
               className="absolute inset-0 origin-top"
               style={{
                 borderRadius: "6px",
-                background: "linear-gradient(to right, rgba(7,25,74,0.8) 0%, #0E2A6B 25%, #2C4F9D 50%, #0E2A6B 75%, rgba(7,25,74,0.8) 100%)",
-                boxShadow: "2px 0 8px rgba(14,42,107,0.45), -1px 0 4px rgba(0,0,0,0.15)",
+                background: "linear-gradient(to right, rgba(13,13,13,0.8) 0%, #B8935A 25%, #2C4F9D 50%, #B8935A 75%, rgba(13,13,13,0.8) 100%)",
+                boxShadow: "2px 0 8px rgba(184,147,90,0.45), -1px 0 4px rgba(0,0,0,0.15)",
                 transform: "scaleY(0)",
               }}
             />
@@ -241,7 +219,7 @@ export function Geschichte() {
             {milestones.map((m, i) => (
               <div
                 key={m.year}
-                className="relative grid grid-cols-[48px_1fr] pb-14 last:pb-0"
+                className="relative grid grid-cols-[48px_1fr] pb-20 last:pb-0"
               >
                 {/* Dot on the thread — 3D sphere */}
                 <div className="flex justify-center pt-2 z-10">
@@ -252,8 +230,8 @@ export function Geschichte() {
                       width: "22px",
                       height: "22px",
                       borderRadius: "50%",
-                      background: "radial-gradient(circle at 35% 32%, #5C7BD3, #0E2A6B 48%, #07194A 100%)",
-                      boxShadow: "0 0 0 3px #f0f0ef, 0 0 0 5px rgba(14,42,107,0.5), 2px 3px 8px rgba(0,0,0,0.3)",
+                      background: "radial-gradient(circle at 35% 32%, #5C7BD3, #B8935A 48%, #0D0D0D 100%)",
+                      boxShadow: "0 0 0 3px #f0f0ef, 0 0 0 5px rgba(184,147,90,0.5), 2px 3px 8px rgba(0,0,0,0.3)",
                       opacity: 0,
                       transform: "scale(0)",
                     }}
@@ -263,47 +241,35 @@ export function Geschichte() {
                 {/* Milestone content */}
                 <div
                   ref={(el) => (cardRefs.current[i] = el)}
-                  className="pl-8 md:pl-12 grid gap-8 md:grid-cols-[1fr_280px] md:gap-10 md:items-start"
+                  className="relative pl-8 md:pl-12 overflow-hidden"
                   style={{ opacity: 0 }}
                 >
-                  <div>
-                    {/* Year + number */}
-                    <div className="flex items-baseline gap-4 mb-3">
-                      <span
-                        className="font-heading font-bold leading-none text-[#0A1628]/[0.07] select-none"
-                        style={{ fontSize: "clamp(2rem, 3.5vw, 3.25rem)" }}
-                      >
-                        {m.year}
-                      </span>
-                      <span className="font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-[#0E2A6B]">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
+                  {/* Ghost year — decorative background */}
+                  <span
+                    className="pointer-events-none select-none absolute right-0 top-1/2 -translate-y-1/2 font-heading font-bold leading-none text-[#141414]/[0.045]"
+                    style={{ fontSize: "clamp(6rem, 14vw, 13rem)" }}
+                  >
+                    {m.year}
+                  </span>
 
-                    <h3 className="mb-3 font-heading text-2xl font-bold text-[#0A1628] md:text-3xl">
-                      {m.title}
-                    </h3>
-                    <p className="mb-2 font-body text-base leading-relaxed text-[#0A1628]/65 max-w-2xl">
-                      {m.desc}
-                    </p>
-                    <p className="font-body text-sm leading-relaxed text-[#0A1628]/40 max-w-xl">
-                      {m.detail}
-                    </p>
-                  </div>
+                  {/* Step number */}
+                  <span className="mb-4 block font-body text-[10px] font-semibold uppercase tracking-[0.35em] text-[#B8935A]">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
 
-                  {/* Milestone image */}
-                  <div data-milestone-img className="relative aspect-[4/3] overflow-hidden rounded-sm shadow-md">
-                    <img
-                      src={m.img}
-                      alt={m.title}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
-                    <span className="absolute bottom-3 left-4 font-body text-[10px] font-semibold uppercase tracking-[0.3em] text-white/85">
-                      {m.year}
-                    </span>
-                  </div>
+                  <h3 className="mb-4 font-heading text-2xl font-bold text-[#141414] md:text-3xl lg:text-4xl">
+                    {m.title}
+                  </h3>
+
+                  {/* Gold divider */}
+                  <div className="mb-5 h-px w-10" style={{ backgroundColor: "#B8935A" }} />
+
+                  <p className="mb-3 font-body text-base leading-relaxed text-[#141414]/65 max-w-2xl">
+                    {m.desc}
+                  </p>
+                  <p className="font-body text-sm leading-relaxed text-[#141414]/40 max-w-xl">
+                    {m.detail}
+                  </p>
                 </div>
               </div>
             ))}
