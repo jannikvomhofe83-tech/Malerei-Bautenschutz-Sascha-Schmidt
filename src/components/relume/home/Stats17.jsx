@@ -133,7 +133,8 @@ export function Stats17() {
               </span>
             </h2>
             <p className="s17-sub font-body text-base text-[#141414]/65 md:text-lg">
-              Seit 20 Jahren in Mühldorf am Inn. Qualität, die bleibt. Ein Name.
+              Seit 20 Jahren in Mühldorf am Inn. Präzision, Genauigkeit
+              und Fachwissen — für jedes Projekt der richtige Partner.
             </p>
             <div className="mt-8">
               <a

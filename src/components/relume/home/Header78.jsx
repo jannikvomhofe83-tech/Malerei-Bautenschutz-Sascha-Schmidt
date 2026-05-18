@@ -3,6 +3,16 @@
 import { useRef, useEffect } from "react";
 import { gsap, ScrollTrigger } from "../../../utils/gsap";
 
+const SERVICES = [
+  "Malerei",
+  "Sanierung",
+  "Bodenverlegung",
+  "Parkettschleifen",
+  "Schimmelsanierung",
+  "Betonsanierung",
+  "Beschichtungen",
+];
+
 export function Header78() {
   const sectionRef = useRef(null);
   const imageRef   = useRef(null);
@@ -104,6 +114,15 @@ export function Header78() {
         { y: 28, opacity: 0 }, { y: 0, opacity: 1, duration: 0.85 }, 1.2);
       tl.fromTo(scope.querySelectorAll(".hero-cta"),
         { y: 22, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.11, duration: 0.7 }, 1.5);
+
+      tl.fromTo(scope.querySelector(".hero-services-line"),
+        { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 0.85 }, 0.4);
+      tl.fromTo(scope.querySelector(".hero-services-eyebrow"),
+        { y: "120%" }, { y: "0%", duration: 0.65 }, 0.7);
+      tl.fromTo(scope.querySelector(".hero-services-rule"),
+        { scaleY: 0 }, { scaleY: 1, transformOrigin: "top center", duration: 1.0 }, 0.85);
+      tl.fromTo(scope.querySelectorAll(".hero-service-item"),
+        { x: 120, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.15, duration: 1.0, ease: "power3.out" }, 1.0);
     }, scope);
 
     return () => ctx.revert();
@@ -187,10 +206,10 @@ export function Header78() {
           </span>
         </h1>
 
-        <p className="hero-body mb-16 max-w-[440px] font-body text-base leading-relaxed text-white/70 md:text-lg">
-          Malerei, Bautenschutz, Schimmelsanierung und mehr aus Mühldorf am Inn.
-          Malerei & Bautenschutz Sascha Schmidt steht seit 20 Jahren für Qualität,
-          Verlässlichkeit und langfristigen Schutz.
+        <p className="hero-body mb-16 max-w-[480px] font-body text-base leading-relaxed text-white/70 md:text-lg">
+          Ihr kompetenter Partner für professionelle Maler- und Bautenschutzarbeiten
+          in Mühldorf am Inn und Umgebung. Unser Team verfügt über langjährige
+          Erfahrung und umfassendes Fachwissen, um Ihre individuellen Anforderungen zu erfüllen.
         </p>
 
         <div className="flex flex-wrap gap-3">
@@ -208,6 +227,68 @@ export function Header78() {
             Leistungen entdecken
             <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
           </a>
+        </div>
+      </div>
+
+      {/* Right column — Architectural service index (lg+) */}
+      <div
+        className="pointer-events-none absolute inset-y-0 right-[6%] z-10 hidden flex-col justify-center lg:flex"
+        style={{ paddingTop: "5rem", paddingBottom: "3rem", width: "34%", maxWidth: "30rem" }}
+        aria-label="Unsere Leistungen"
+      >
+        {/* Eyebrow — horizontal gold stroke + label */}
+        <div className="mb-9 flex items-center gap-4">
+          <span
+            className="hero-services-line h-px w-12 flex-shrink-0"
+            style={{ background: "#B8935A" }}
+          />
+          <div style={{ overflow: "hidden" }}>
+            <p
+              className="hero-services-eyebrow font-body text-xs font-semibold uppercase tracking-[0.32em]"
+              style={{ color: "#B8935A" }}
+            >
+              Unsere Leistungen
+            </p>
+          </div>
+        </div>
+
+        {/* Anchored list — vertical gold rule as left edge */}
+        <div className="relative pl-8">
+          {/* Vertical gold rule — L-shape together with the eyebrow line above */}
+          <span
+            className="hero-services-rule absolute left-0 top-0 h-full w-px"
+            style={{
+              background:
+                "linear-gradient(to bottom, rgba(184,147,90,0.85) 0%, rgba(184,147,90,0.35) 75%, rgba(184,147,90,0) 100%)",
+            }}
+            aria-hidden="true"
+          />
+
+          <ul>
+            {SERVICES.map((s, i) => (
+              <li
+                key={s}
+                className="hero-service-item flex items-baseline gap-6 py-[1.1rem]"
+                style={{
+                  textShadow: "0 2px 16px rgba(0,0,0,0.6)",
+                  borderBottom:
+                    i < SERVICES.length - 1
+                      ? "1px solid rgba(255,255,255,0.07)"
+                      : "none",
+                }}
+              >
+                <span
+                  className="font-body text-[0.78rem] font-semibold tabular-nums tracking-[0.22em]"
+                  style={{ color: "rgba(184,147,90,0.85)" }}
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-heading text-[1.65rem] font-medium leading-none tracking-tight text-white md:text-[1.95rem]">
+                  {s}
+                </span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
 

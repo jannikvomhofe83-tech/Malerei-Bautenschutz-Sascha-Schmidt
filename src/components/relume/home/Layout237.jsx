@@ -6,13 +6,13 @@ import { gsap } from "../../../utils/gsap";
 const features = [
   {
     title: "Handwerk als Berufung",
-    body: "Seit 20 Jahren im Bauhandwerk als Maler und Lackierer tätig. Sascha Schmidt steht für Qualität, Verlässlichkeit und persönliche Betreuung – von der ersten Beratung bis zur finalen Ausführung.",
+    body: "Langjährige Erfahrung und umfassendes Fachwissen treffen auf echte Leidenschaft fürs Handwerk. Wir gehen auf Ihre individuellen Anforderungen ein – von der ersten Beratung bis zur finalen Ausführung.",
     image: "/images/craftsmen-painting.png",
     position: "center 10%",
   },
   {
-    title: "Qualität & Verlässlichkeit",
-    body: "Klare Angebote, direkte Kommunikation, ein Ansprechpartner. Wir setzen ausschließlich Produkte renommierter Hersteller in Profiqualität ein – ästhetisch ansprechend und langfristig schützend.",
+    title: "Präzision & Qualität",
+    body: "Wir legen Wert auf Präzision und Genauigkeit, damit jedes Projekt erfolgreich abgeschlossen wird. Profi-Produkte renommierter Hersteller sorgen für Ergebnisse, die ästhetisch ansprechend sind und langfristig schützen.",
     image: "/images/handshake-quality.png",
     position: "center center",
   },
